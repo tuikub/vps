@@ -1,1 +1,395 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>นโยบายความเป็นส่วนตัว - DigiCloud</title>
+    <!-- Google Fonts: Sarabun -->
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0056b3; /* สีหลัก (น้ำเงิน) */
+            --secondary-color: #f2f4f8; /* สีพื้นหลังส่วนเสริม */
+            --text-color: #333;
+            --bg-color: #f9f9f9;
+            --white: #ffffff;
+            --border-color: #ddd;
+        }
 
+        body {
+            font-family: 'Sarabun', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background-color: var(--white);
+            padding: 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-radius: 8px;
+        }
+
+        /* Header Styles */
+        header {
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* Content Styles */
+        h2 {
+            color: var(--primary-color);
+            font-size: 22px;
+            margin-top: 35px;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 12px;
+        }
+
+        h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: #444;
+        }
+
+        h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        p { margin-bottom: 15px; }
+        ul, ol { margin-bottom: 15px; padding-left: 20px; }
+        li { margin-bottom: 6px; }
+
+        /* Highlight Box (e.g., Data Controller Info) */
+        .info-box {
+            background-color: var(--secondary-color);
+            padding: 20px;
+            border-radius: 6px;
+            border-left: 4px solid #888;
+            margin: 20px 0;
+        }
+
+        /* Table Styles (Retention Period) */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 15px;
+        }
+
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            font-weight: bold;
+            width: 40%;
+        }
+
+        tr:nth-child(even) { background-color: #fcfcfc; }
+
+        /* Rights Grid System */
+        .rights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .right-card {
+            background: #fff;
+            border: 1px solid #eee;
+            padding: 15px;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+
+        .right-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-color: var(--primary-color);
+        }
+
+        .right-number {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            width: 24px;
+            height: 24px;
+            text-align: center;
+            border-radius: 50%;
+            font-size: 14px;
+            line-height: 24px;
+            margin-right: 8px;
+        }
+
+        /* Contact Box (Footer) */
+        .contact-box {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 40px;
+        }
+        
+        .contact-box a {
+            color: #ffd700; /* Gold color for links on blue bg */
+            text-decoration: none;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 600px) {
+            .container { margin: 0; padding: 20px; border-radius: 0; }
+            h1 { font-size: 24px; }
+            .rights-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>นโยบายความเป็นส่วนตัว (Privacy Policy)</h1>
+            <p class="subtitle">อัปเดตล่าสุด: 4 กุมภาพันธ์ 2026</p>
+        </header>
+
+        <section>
+            <h2>1. บทนำ</h2>
+            <p>บริษัท ดิจิเทค อินโนเวชั่น จำกัด ("DigiCloud", "เรา", "ของเรา") ให้ความสำคัญกับความเป็นส่วนตัวของท่าน นโยบายความเป็นส่วนตัวฉบับนี้จัดทำขึ้นเพื่อแจ้งให้ท่านทราบถึงวิธีการที่เราเก็บรวบรวม ใช้ เปิดเผย และคุ้มครองข้อมูลส่วนบุคคลของท่าน ตามพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 (PDPA) และกฎหมายที่เกี่ยวข้อง</p>
+        </section>
+
+        <section>
+            <h2>2. ผู้ควบคุมข้อมูลส่วนบุคคล</h2>
+            <div class="info-box">
+                <p><strong>ชื่อองค์กร:</strong> บริษัท ดิจิเทค อินโนเวชั่น จำกัด</p>
+                <p><strong>ที่อยู่:</strong> 13 ซอยโกสุมรวมใจ 12 แขวงดอนเมือง เขตดอนเมือง กรุงเทพมหานคร 10210</p>
+                <p><strong>อีเมล:</strong> <a href="mailto:privacy@digicloud.in.th">privacy@digicloud.in.th</a></p>
+                <p><strong>เบอร์โทร:</strong> 02-095-5222</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>3. ข้อมูลส่วนบุคคลที่เราเก็บรวบรวม</h2>
+            <p>เราอาจเก็บรวบรวมข้อมูลส่วนบุคคลดังต่อไปนี้:</p>
+            
+            <h3>3.1 ข้อมูลที่ท่านให้โดยตรง</h3>
+            <ul>
+                <li>ชื่อ-นามสกุล</li>
+                <li>ที่อยู่อีเมล</li>
+                <li>หมายเลขโทรศัพท์</li>
+                <li>ที่อยู่สำหรับการออกใบเสร็จ/ใบกำกับภาษี</li>
+                <li>ข้อมูลบัญชีธนาคาร (สำหรับการคืนเงิน)</li>
+                <li>ข้อมูลการชำระเงินและหลักฐานการโอนเงิน</li>
+            </ul>
+
+            <h3>3.2 ข้อมูลที่เก็บโดยอัตโนมัติ</h3>
+            <ul>
+                <li>ที่อยู่ IP (Internet Protocol)</li>
+                <li>ประเภทของเบราว์เซอร์และอุปกรณ์</li>
+                <li>บันทึกการใช้งานระบบ (Log Files)</li>
+                <li>คุกกี้และเทคโนโลยีที่คล้ายคลึงกัน</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>4. วัตถุประสงค์ในการใช้ข้อมูล</h2>
+            <p>เราใช้ข้อมูลส่วนบุคคลของท่านเพื่อวัตถุประสงค์ดังต่อไปนี้:</p>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div>
+                    <h4>การให้บริการ</h4>
+                    <ul>
+                        <li>จัดเตรียมและให้บริการตามสัญญา</li>
+                        <li>จัดการบัญชีผู้ใช้</li>
+                        <li>ประมวลผลการชำระเงิน</li>
+                        <li>ให้การสนับสนุนลูกค้า</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>การติดต่อสื่อสาร</h4>
+                    <ul>
+                        <li>ส่งข้อมูลเกี่ยวกับบริการ</li>
+                        <li>แจ้งเตือนการบำรุงรักษา</li>
+                        <li>ตอบคำถามและข้อร้องเรียน</li>
+                        <li>ส่งข่าวสารและโปรโมชั่น (ด้วยความยินยอม)</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>ความปลอดภัย</h4>
+                    <ul>
+                        <li>ป้องกันการฉ้อโกง</li>
+                        <li>ตรวจสอบความผิดปกติ</li>
+                        <li>รักษาความปลอดภัยระบบ</li>
+                        <li>ปฏิบัติตามกฎหมาย</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>การปรับปรุงบริการ</h4>
+                    <ul>
+                        <li>วิเคราะห์การใช้งาน</li>
+                        <li>พัฒนาคุณภาพบริการ</li>
+                        <li>วิจัยและพัฒนา</li>
+                        <li>สร้างสถิติและรายงาน</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>5. ฐานทางกฎหมายในการประมวลผล</h2>
+            <p>เราประมวลผลข้อมูลส่วนบุคคลบนฐานทางกฎหมายดังต่อไปนี้:</p>
+            <ul>
+                <li><strong>ความยินยอม (Consent):</strong> เมื่อท่านให้ความยินยอมโดยชัดแจ้ง เช่น การสมัครรับข่าวสาร</li>
+                <li><strong>สัญญา (Contract):</strong> เพื่อการปฏิบัติตามสัญญาที่ท่านเป็นคู่สัญญา</li>
+                <li><strong>หน้าที่ตามกฎหมาย (Legal Obligation):</strong> เพื่อปฏิบัติตามกฎหมายที่บังคับใช้</li>
+                <li><strong>ประโยชน์โดยชอบด้วยกฎหมาย (Legitimate Interest):</strong> เพื่อประโยชน์ที่ชอบด้วยกฎหมายของเรา โดยไม่ละเมิดสิทธิของท่าน</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>6. การเปิดเผยข้อมูลส่วนบุคคล</h2>
+            <p>เราอาจเปิดเผยข้อมูลส่วนบุคคลของท่านให้แก่:</p>
+            <ul>
+                <li><strong>ผู้ให้บริการภายนอก:</strong> ผู้ให้บริการชำระเงิน, ผู้ให้บริการ cloud infrastructure, ผู้ให้บริการสนับสนุนลูกค้า</li>
+                <li><strong>หน่วยงานราชการ:</strong> เมื่อมีคำสั่งตามกฎหมายหรือหมายศาล</li>
+                <li><strong>ที่ปรึกษาทางกฎหมาย:</strong> เมื่อจำเป็นเพื่อปกป้องสิทธิของเรา</li>
+            </ul>
+            <p><em>* เราไม่ขายหรือให้เช่าข้อมูลส่วนบุคคลของท่านแก่บุคคลที่สามเพื่อวัตถุประสงค์ทางการตลาด</em></p>
+        </section>
+
+        <section>
+            <h2>7. ระยะเวลาการเก็บรักษาข้อมูล</h2>
+            <p>เราจะเก็บรักษาข้อมูลส่วนบุคคลของท่านตามระยะเวลาดังนี้:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ประเภทข้อมูล</th>
+                        <th>ระยะเวลาเก็บรักษา</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ข้อมูลบัญชีผู้ใช้</td>
+                        <td>ตลอดอายุบัญชี + 7 ปี</td>
+                    </tr>
+                    <tr>
+                        <td>ข้อมูลการชำระเงิน</td>
+                        <td>10 ปี (ตามกฎหมายภาษี)</td>
+                    </tr>
+                    <tr>
+                        <td>บันทึกการใช้งาน</td>
+                        <td>1 ปี</td>
+                    </tr>
+                    <tr>
+                        <td>คุกกี้</td>
+                        <td>สูงสุด 1 ปี</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>8. สิทธิของเจ้าของข้อมูลส่วนบุคคล</h2>
+            <p>ตามพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 ท่านมีสิทธิดังต่อไปนี้:</p>
+            
+            <div class="rights-grid">
+                <div class="right-card">
+                    <h4><span class="right-number">1</span>สิทธิในการเข้าถึงข้อมูล</h4>
+                    <p>ขอเข้าถึงข้อมูลส่วนบุคคลของท่านที่เราเก็บรักษาไว้</p>
+                </div>
+                <div class="right-card">
+                    <h4><span class="right-number">2</span>สิทธิในการแก้ไขข้อมูล</h4>
+                    <p>ขอให้แก้ไขข้อมูลที่ไม่ถูกต้องหรือไม่สมบูรณ์</p>
+                </div>
+                <div class="right-card">
+                    <h4><span class="right-number">3</span>สิทธิในการลบข้อมูล</h4>
+                    <p>ขอให้ลบข้อมูลส่วนบุคคลของท่านในบางกรณี</p>
+                </div>
+                <div class="right-card">
+                    <h4><span class="right-number">4</span>สิทธิในการจำกัดการประมวลผล</h4>
+                    <p>ขอให้จำกัดการประมวลผลข้อมูลส่วนบุคคล</p>
+                </div>
+                <div class="right-card">
+                    <h4><span class="right-number">5</span>สิทธิในการเคลื่อนย้ายข้อมูล</h4>
+                    <p>ขอรับข้อมูลในรูปแบบที่อ่านได้ด้วยเครื่องมืออัตโนมัติ</p>
+                </div>
+                <div class="right-card">
+                    <h4><span class="right-number">6</span>สิทธิในการคัดค้าน</h4>
+                    <p>คัดค้านการประมวลผลข้อมูลในบางกรณี</p>
+                </div>
+                <div class="right-card">
+                    <h4><span class="right-number">7</span>สิทธิในการถอนความยินยอม</h4>
+                    <p>ถอนความยินยอมได้ตลอดเวลา</p>
+                </div>
+            </div>
+
+            <p style="margin-top: 20px;"><strong>การติดต่อเพื่อใช้สิทธิ:</strong> หากท่านต้องการใช้สิทธิของท่าน กรุณาติดต่อเราที่ <a href="mailto:privacy@digicloud.in.th">privacy@digicloud.in.th</a> หรือ 02-095-5222 เราจะดำเนินการภายใน 30 วัน</p>
+        </section>
+
+        <section>
+            <h2>9. คุกกี้และเทคโนโลยีที่คล้ายคลึงกัน</h2>
+            <p>เราใช้คุกกี้และเทคโนโลยีที่คล้ายคลึงกันเพื่อจดจำการตั้งค่าของท่าน เข้าใจวิธีการที่ท่านใช้บริการของเรา ปรับปรุงประสบการณ์การใช้งาน และวิเคราะห์ประสิทธิภาพของเว็บไซต์</p>
+            <p>ท่านสามารถจัดการคุกกี้ได้ผ่านการตั้งค่าเบราว์เซอร์ของท่าน อย่างไรก็ตาม การปิดใช้งานคุกกี้อาจส่งผลต่อประสบการณ์การใช้งานบางส่วน</p>
+        </section>
+
+        <section>
+            <h2>10. มาตรการรักษาความปลอดภัย</h2>
+            <p>เราใช้มาตรการรักษาความปลอดภัยที่เหมาะสมเพื่อปกป้องข้อมูลส่วนบุคคลของท่าน รวมถึง:</p>
+            <ul>
+                <li>การเข้ารหัส SSL/TLS สำหรับการส่งข้อมูล</li>
+                <li>การควบคุมการเข้าถึงข้อมูล</li>
+                <li>การตรวจสอบและบันทึกการเข้าถึงระบบ</li>
+                <li>การสำรองข้อมูล</li>
+                <li>การฝึกอบรมพนักงานด้านความปลอดภัยข้อมูล</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>11. การโอนข้อมูลไปต่างประเทศ</h2>
+            <p>เราอาจโอนข้อมูลส่วนบุคคลของท่านไปยังผู้ให้บริการ cloud ที่ตั้งอยู่นอกประเทศไทย (เช่น AWS, Google Cloud) โดยเราจะใช้มาตรการที่เหมาะสมเพื่อให้แน่ใจว่าข้อมูลของท่านได้รับการคุ้มครองตามมาตรฐานที่เทียบเท่ากับ PDPA</p>
+        </section>
+
+        <section>
+            <h2>12. การเปลี่ยนแปลงนโยบาย</h2>
+            <p>เราอาจแก้ไขนโยบายความเป็นส่วนตัวนี้เป็นครั้งคราว การเปลี่ยนแปลงจะมีผลทันทีเมื่อประกาศบนเว็บไซต์ของเรา เราขอแนะนำให้ท่านตรวจสอบนโยบายนี้เป็นระยะๆ</p>
+        </section>
+
+        <section>
+            <h2>13. ติดต่อเรา</h2>
+            <div class="contact-box">
+                <p>หากท่านมีคำถามหรือข้อกังวลเกี่ยวกับนโยบายความเป็นส่วนตัวนี้ กรุณาติดต่อเรา:</p>
+                <p><strong>บริษัท ดิจิเทค อินโนเวชั่น จำกัด</strong></p>
+                <p>13 ซอยโกสุมรวมใจ 12 แขวงดอนเมือง เขตดอนเมือง กรุงเทพมหานคร 10210</p>
+                <p><strong>อีเมล:</strong> <a href="mailto:privacy@digicloud.in.th">privacy@digicloud.in.th</a></p>
+                <p><strong>เบอร์โทร:</strong> <a href="tel:020955222">02-095-5222</a></p>
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>
