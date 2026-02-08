@@ -3,13 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BizBox - โซลูชั่นคลาวด์สำหรับธุรกิจของคุณ</title>
-    <meta name="description" content="BizBox - โซลูชั่นคลาวด์สำหรับธุรกิจของคุณ ให้บริการ Web Hosting, VPS Forex, VPS Linux, Email Lite และ VPS-WinStart">
-    <meta name="keywords" content="web hosting, vps, vps forex, vps linux, email hosting, โฮสติ้ง, vps, อีเมลโฮสติ้ง">
+    <title>BizBox - โซลูชั่นคลาวด์สำหรับธุรกิจของคุณ | Web Hosting, VPS Forex, VPS Linux</title>
+    <meta name="description" content="BizBox - ผู้ให้บริการโซลูชั่นคลาวด์ครบวงจร ให้บริการ Web Hosting, VPS Forex, VPS Linux, Email Hosting และ VPS Windows ราคาถูก ระบบเสถียร บริการ 24 ชั่วโมง">
+    <meta name="keywords" content="web hosting, vps, vps forex, vps linux, email hosting, โฮสติ้ง, vps, อีเมลโฮสติ้ง, คลาวด์, โซลูชั่นคลาวด์, บริษัท ดิจิเทค อินโนเวชั่น">
+    <meta name="author" content="บริษัท ดิจิเทค อินโนเวชั่น จำกัด">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tuikub.github.io/vps/bizbox/">
+    <meta property="og:title" content="BizBox - โซลูชั่นคลาวด์สำหรับธุรกิจของคุณ">
+    <meta property="og:description" content="ผู้ให้บริการโซลูชั่นคลาวด์ครบวงจร ให้บริการ Web Hosting, VPS Forex, VPS Linux, Email Hosting และ VPS Windows ราคาถูก ระบบเสถียร">
+    <meta property="og:image" content="https://picsum.photos/seed/bizbox-og/1200/630.jpg">
+    <meta property="og:site_name" content="BizBox">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://tuikub.github.io/vps/bizbox/">
+    <meta property="twitter:title" content="BizBox - โซลูชั่นคลาวด์สำหรับธุรกิจของคุณ">
+    <meta property="twitter:description" content="ผู้ให้บริการโซลูชั่นคลาวด์ครบวงจร ให้บริการ Web Hosting, VPS Forex, VPS Linux, Email Hosting และ VPS Windows">
+    <meta property="twitter:image" content="https://picsum.photos/seed/bizbox-twitter/1200/630.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://tuikub.github.io/vps/bizbox/">
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "BizBox",
+        "url": "https://tuikub.github.io/vps/bizbox/",
+        "logo": "https://tuikub.github.io/vps/bizbox/images/logo.png",
+        "description": "ผู้ให้บริการโซลูชั่นคลาวด์ครบวงจร ให้บริการ Web Hosting, VPS Forex, VPS Linux, Email Hosting และ VPS Windows",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "13 ซอยโกสุมรวมใจ 12",
+            "addressLocality": "แขวงดอนเมือง เขตดอนเมือง",
+            "addressRegion": "กรุงเทพมหานคร",
+            "postalCode": "10210",
+            "addressCountry": "TH"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+66-81-088-8269",
+            "contactType": "customer service",
+            "availableLanguage": "Thai",
+            "contactOption": "TollFree"
+        },
+        "sameAs": [
+            "https://www.facebook.com/bizboxth/",
+            "https://www.youtube.com/channel/UC0IEG_tOt1Hrj4FXDbkZN-A",
+            "https://line.me/ti/p/~@bizbox"
+        ],
+        "offers": [
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Web Hosting",
+                    "description": "บริการ Web Hosting ความเร็วสูงด้วย NVMe SSD"
+                },
+                "price": "1500",
+                "priceCurrency": "THB",
+                "availability": "https://schema.org/InStock"
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "VPS Forex",
+                    "description": "VPS สำหรับการเทรดคริปโตเคอร์เรนซี"
+                },
+                "price": "199",
+                "priceCurrency": "THB",
+                "availability": "https://schema.org/InStock"
+            }
+        ]
+    }
+    </script>
     
     <style>
         :root {
@@ -305,6 +381,295 @@
             background-color: transparent;
         }
         
+        /* Testimonials Section */
+        .testimonial-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            transition: all 0.3s;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .testimonial-card.animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+        }
+        
+        .stars {
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            background-color: #f8f9fa;
+            padding: 80px 0;
+        }
+        
+        .faq-item {
+            background-color: white;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+        
+        .faq-item:hover {
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .faq-question {
+            padding: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s;
+        }
+        
+        .faq-question:hover {
+            background-color: #f8f9fa;
+        }
+        
+        .faq-question.active {
+            color: var(--primary-color);
+            background-color: #f0f7ff;
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-answer.show {
+            padding: 0 20px 20px;
+            max-height: 500px;
+        }
+        
+        .faq-icon {
+            transition: transform 0.3s;
+        }
+        
+        .faq-question.active .faq-icon {
+            transform: rotate(180deg);
+        }
+        
+        /* AI Chatbot */
+        .ai-chatbot {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+        
+        .chatbot-button {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .chatbot-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+        
+        .chatbot-window {
+            position: absolute;
+            bottom: 80px;
+            right: 0;
+            width: 350px;
+            height: 500px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        
+        .chatbot-window.show {
+            display: flex;
+            animation: slideUp 0.3s ease;
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .chatbot-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .chatbot-body {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            background-color: #f9f9f9;
+        }
+        
+        .chatbot-footer {
+            padding: 15px;
+            border-top: 1px solid #eee;
+            display: flex;
+        }
+        
+        .chatbot-input {
+            flex: 1;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            padding: 8px 15px;
+            outline: none;
+        }
+        
+        .chatbot-send {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            margin-left: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .chat-message {
+            margin-bottom: 15px;
+            display: flex;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .chat-message.user {
+            justify-content: flex-end;
+        }
+        
+        .chat-bubble {
+            max-width: 80%;
+            padding: 10px 15px;
+            border-radius: 15px;
+            word-wrap: break-word;
+        }
+        
+        .chat-message.ai .chat-bubble {
+            background-color: white;
+            color: #333;
+            border: 1px solid #eee;
+        }
+        
+        .chat-message.user .chat-bubble {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .typing-indicator {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            background-color: white;
+            border: 1px solid #eee;
+            border-radius: 15px;
+            width: fit-content;
+        }
+        
+        .typing-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #999;
+            margin: 0 2px;
+            animation: typing 1.4s infinite;
+        }
+        
+        .typing-dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        
+        .typing-dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+        
+        @keyframes typing {
+            0%, 60%, 100% {
+                transform: translateY(0);
+            }
+            30% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        /* Quick Actions */
+        .quick-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .quick-action-btn {
+            padding: 8px 12px;
+            border: 1px solid var(--primary-color);
+            background-color: white;
+            color: var(--primary-color);
+            border-radius: 20px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .quick-action-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
         /* Footer */
         .footer {
             background-color: var(--dark-color);
@@ -421,6 +786,12 @@
                 padding: 8px 10px;
                 margin-right: 5px;
             }
+            
+            .chatbot-window {
+                width: 300px;
+                height: 450px;
+                right: -10px;
+            }
         }
         
         /* Animations */
@@ -456,6 +827,12 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#services">บริการของเรา</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#reviews">รีวิว</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#faq">คำถาม</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">ติดต่อเรา</a>
@@ -939,6 +1316,247 @@
         </div>
     </section>
 
+    <!-- Reviews Section -->
+    <section id="reviews" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">รีวิวจากลูกค้า</h2>
+                <p class="lead">ความคิดเห็นจากลูกค้าที่ใช้บริการของเรา</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <p>"บริการดีเยี่ยม ระบบเสถียร ทีมงานตอบปัญหาได้รวดเร็ว ใช้งาน VPS Forex มา 6 เดือนแล้ว ไม่เคยมีปัญหา"</p>
+                        <div class="d-flex align-items-center">
+                            <img src="https://picsum.photos/seed/customer1/80/80.jpg" alt="ลูกค้า" class="testimonial-avatar">
+                            <div class="ms-3">
+                                <h6 class="mb-0">สมชาย ใจดี</h6>
+                                <small class="text-muted">เทรดเดอร์มืออาชีพ</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <p>"Web Hosting ความเร็วสูงมาก โหลดเว็บไซต์ไวกว่าเดิม 3 เท่า ราคาถูกกว่าที่อื่นอีกด้วย"</p>
+                        <div class="d-flex align-items-center">
+                            <img src="https://picsum.photos/seed/customer2/80/80.jpg" alt="ลูกค้า" class="testimonial-avatar">
+                            <div class="ms-3">
+                                <h6 class="mb-0">มานี แก้วใส</h6>
+                                <small class="text-muted">เจ้าของร้านค้าออนไลน์</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <p>"ทีมงาน support ดีมาก ตอบไว แก้ปัญหาได้ตรงจุด ใช้บริการมา 2 ปีแล้ว ประทับใจมาก"</p>
+                        <div class="d-flex align-items-center">
+                            <img src="https://picsum.photos/seed/customer3/80/80.jpg" alt="ลูกค้า" class="testimonial-avatar">
+                            <div class="ms-3">
+                                <h6 class="mb-0">วิชัย รุ่งเรือง</h6>
+                                <small class="text-muted">นักพัฒนาเว็บไซต์</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <p>"VPS Linux สำหรับทำงานครับ ราคาถูก สเปคสูง รันโปรแกรมหนักๆ ได้ลื่นไหล ไม่มีสะดุด"</p>
+                        <div class="d-flex align-items-center">
+                            <img src="https://picsum.photos/seed/customer4/80/80.jpg" alt="ลูกค้า" class="testimonial-avatar">
+                            <div class="ms-3">
+                                <h6 class="mb-0">ประเสริฐ โชคดี</h6>
+                                <small class="text-muted">โปรแกรมเมอร์</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <p>"Email Hosting ใช้งานง่าย ส่งเมลเร็ว ไม่โดนบล็อก มีทีมงานคอยช่วยเหลือตลอด 24 ชั่วโมง"</p>
+                        <div class="d-flex align-items-center">
+                            <img src="https://picsum.photos/seed/customer5/80/80.jpg" alt="ลูกค้า" class="testimonial-avatar">
+                            <div class="ms-3">
+                                <h6 class="mb-0">สุนีย์ รัตน์ธนา</h6>
+                                <small class="text-muted">เจ้าของบริษัท</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <p>"VPS Windows ใช้งานโปรแกรมบัญชีได้ดี ไม่มีปัญหาด้านความเร็ว ราคาคุ้มค่ามาก"</p>
+                        <div class="d-flex align-items-center">
+                            <img src="https://picsum.photos/seed/customer6/80/80.jpg" alt="ลูกค้า" class="testimonial-avatar">
+                            <div class="ms-3">
+                                <h6 class="mb-0">อนุชิต สุขสันต์</h6>
+                                <small class="text-muted">นักบัญชี</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">คำถามที่พบบ่อย</h2>
+                <p class="lead">คำตอบสำหรับคำถามที่ลูกค้าสอบถามบ่อย</p>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span> BizBox คืออะไร?</span>
+                            <i class="bi bi-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>BizBox เป็นผู้ให้บริการโซลูชั่นคลาวด์ครบวงจร ให้บริการ Web Hosting, VPS Forex, VPS Linux, Email Hosting และ VPS Windows สำหรับธุรกิจทุกขนาด</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>การชำระเงินสามารถทำได้ผ่านช่องทางใดบ้าง?</span>
+                            <i class="bi bi-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>คุณสามารถชำระเงินได้ผ่านช่องทางต่างๆ เช่น โอนเงินผ่านธนาคาร (SCB), พร้อมเพย์, บัตรเครดิต และระบบ e-Wallet ต่างๆ</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>มีบริการหลังการขายหรือไม่?</span>
+                            <i class="bi bi-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>มีครับ เรามีทีมงาน support คอยให้บริการตลอด 24 ชั่วโมง ผ่านช่องทาง Line, Facebook Messenger และโทรศัพท์</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>สามารถอัปเกรดแพ็คเกจได้หรือไม่?</span>
+                            <i class="bi bi-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>ได้ครับ คุณสามารถอัปเกรดแพ็คเกจได้ตลอดเวลาผ่านระบบลูกค้าสัมพันธ์ หรือติดต่อทีมงานเพื่อขอความช่วยเหลือ</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>มีระยะเวลาในการใช้งานทดลองหรือไม่?</span>
+                            <i class="bi bi-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>บางแพ็คเกจมีบริการทดลองใช้งานฟรี 7-30 วัน กรุณาติดต่อทีมงานเพื่อสอบถามรายละเอียดเพิ่มเติม</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>ข้อมูลจะถูกสำรองไว้หรือไม่?</span>
+                            <i class="bi bi-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>ใช่ครับ เรามีระบบสำรองข้อมูลอัตโนมัติทุกวัน และมีระบบกู้คืนข้อมูลเมื่อจำเป็น</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>สามารถติดตั้ง SSL Certificate ได้หรือไม่?</span>
+                            <i class="bi bi-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>ได้ครับ ทุกแพ็คเกจรองรับการติดตั้ง SSL Certificate และเรามีบริการ Let's Encrypt ฟรีสำหรับลูกค้าทุกท่าน</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>มีการรับประกัน uptime หรือไม่?</span>
+                            <i class="bi bi-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>ใช่ครับ เรารับประกัน uptime 99.9% สำหรับทุกบริการ หากไม่สามารถรักษาเป้าหมายได้ เราพร้อมคืนเงินตามสัดส่วน</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>สามารถยกเลิกบริการได้หรือไม่?</span>
+                            <i class="bi bi-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>ได้ครับ คุณสามารถยกเลิกบริการได้ทุกเวลา โดยไม่มีค่าธรรมเนียมในการยกเลิก</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>มีบริการ Domain Name หรือไม่?</span>
+                            <i class="bi bi-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>ใช่ครับ เราให้บริการจดทะเบียน Domain Name ทุกประเภท ทั้ง .com, .net, .org และ .co.th</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="py-5 bg-light">
         <div class="container">
@@ -972,9 +1590,9 @@
                             </div>
                             <h5 class="card-title mt-3">ติดต่อฉับพลัน</h5>
                             <p class="card-text">
-                                โทร: 081-088-8269<br>
-                                แอดไลน์: <a href="https://lin.ee/8GzYFMo" target="_blank">@bizbox</a><br>
-                                เฟสบุ๊ค: <a href="https://m.me/557079864149621" target="_blank">Message</a>
+                                โทร: <a href="tel:0810888269">081-088-8269</a><br>
+                                แอดไลน์: <a href="https://lin.ee/8GzYFMo" target="_blank">คลิกเพื่อเพิ่มเพื่อน</a><br>
+                                เฟสบุ๊ค: <a href="https://m.me/557079864149621" target="_blank">ส่งข้อความ</a>
                             </p>
                         </div>
                     </div>
@@ -1000,24 +1618,24 @@
                 <div class="col-md-8 mx-auto">
                     <div class="contact-card">
                         <h4 class="card-title text-center mb-4">ส่งข้อความถึงเรา</h4>
-                        <form id="contactForm">
+                        <form id="contactForm" action="mailto:pratya.tui@gmail.com" method="post" enctype="text/plain">
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label for="name" class="form-label">ชื่อ-นามสกุล</label>
-                                    <input type="text" class="form-control" id="name" required>
+                                    <input type="text" class="form-control" id="name" name="name" required>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="email" class="form-label">อีเมล</label>
-                                    <input type="email" class="form-control" id="email" required>
+                                    <input type="email" class="form-control" id="email" name="email" required>
                                 </div>
                             </div>
                             <div class="mb-3">
                                 <label for="subject" class="form-label">เรื่อง</label>
-                                <input type="text" class="form-control" id="subject" required>
+                                <input type="text" class="form-control" id="subject" name="subject" required>
                             </div>
                             <div class="mb-3">
                                 <label for="message" class="form-label">ข้อความ</label>
-                                <textarea class="form-control" id="message" rows="5" required></textarea>
+                                <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
                             </div>
                             <div class="text-center">
                                 <button type="submit" class="btn btn-primary-custom px-5">ส่งข้อความ</button>
@@ -1048,6 +1666,8 @@
                     <ul class="list-unstyled">
                         <li><a href="#home">หน้าแรก</a></li>
                         <li><a href="#services">บริการของเรา</a></li>
+                        <li><a href="#reviews">รีวิว</a></li>
+                        <li><a href="#faq">คำถาม</a></li>
                         <li><a href="#contact">ติดต่อเรา</a></li>
                         <li><a href="https://client.bizbox.in.th/index.php?/clientarea/" target="_blank">เข้าสู่ระบบ</a></li>
                     </ul>
@@ -1094,6 +1714,50 @@
         </div>
     </div>
 
+    <!-- AI Chatbot -->
+    <div class="ai-chatbot">
+        <button class="chatbot-button" id="chatbotToggle">
+            <i class="bi bi-robot"></i>
+        </button>
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <div>
+                    <strong>BizBox AI Assistant</strong>
+                    <div style="font-size: 12px; opacity: 0.8;">พร้อมให้บริการคุณ</div>
+                </div>
+                <button class="btn btn-sm text-white" id="closeChatbot">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+            </div>
+            <div class="chatbot-body" id="chatbotBody">
+                <div class="chat-message ai">
+                    <div class="chat-bubble">
+                        สวัสดีครับ! ยินดีต้อนรับสู่ BizBox มีอะไรให้ช่วยเหลือครับ?
+                    </div>
+                </div>
+                
+                <!-- Quick Actions -->
+                <div class="quick-actions">
+                    <a href="https://lin.ee/8GzYFMo" target="_blank" class="quick-action-btn">
+                        <i class="bi bi-line"></i> แชทผ่าน Line
+                    </a>
+                    <a href="https://m.me/557079864149621" target="_blank" class="quick-action-btn">
+                        <i class="bi bi-messenger"></i> แชท Facebook
+                    </a>
+                    <a href="tel:0810888269" class="quick-action-btn">
+                        <i class="bi bi-telephone"></i> โทรหาเรา
+                    </a>
+                </div>
+            </div>
+            <div class="chatbot-footer">
+                <input type="text" class="chatbot-input" id="chatbotInput" placeholder="พิมพ์ข้อความ...">
+                <button class="chatbot-send" id="sendMessage">
+                    <i class="bi bi-send"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
@@ -1134,7 +1798,7 @@
             });
         });
 
-        // Form Submission
+        // Form Submission - Send to Email
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -1164,7 +1828,19 @@
             
             // Show result
             if (isValid) {
-                showAlert('success', 'สำเร็จ!', 'ข้อมูลของคุณได้ถูกส่งเรียบร้อยแล้ว');
+                // Create email content
+                const emailContent = `ชื่อ: ${name}\nอีเมล: ${email}\nเรื่อง: ${subject}\nข้อความ: ${message}`;
+                
+                // Create mailto link
+                const mailtoLink = `mailto:pratya.tui@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailContent)}`;
+                
+                // Open email client
+                window.location.href = mailtoLink;
+                
+                // Show success message
+                showAlert('success', 'สำเร็จ!', 'กำลังเปิดโปรแกรมอีเมลเพื่อส่งข้อความ');
+                
+                // Reset form
                 this.reset();
             } else {
                 showAlert('danger', 'ข้อผิดพลาด!', errorMessage);
@@ -1193,6 +1869,131 @@
             }, 5000);
         }
 
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const answer = this.nextElementSibling;
+                const isActive = this.classList.contains('active');
+                
+                // Close all other FAQs
+                document.querySelectorAll('.faq-question').forEach(q => {
+                    q.classList.remove('active');
+                    q.nextElementSibling.classList.remove('show');
+                });
+                
+                // Toggle current FAQ
+                if (!isActive) {
+                    this.classList.add('active');
+                    answer.classList.add('show');
+                }
+            });
+        });
+
+        // AI Chatbot
+        const chatbotToggle = document.getElementById('chatbotToggle');
+        const chatbotWindow = document.getElementById('chatbotWindow');
+        const closeChatbot = document.getElementById('closeChatbot');
+        const chatbotInput = document.getElementById('chatbotInput');
+        const sendMessage = document.getElementById('sendMessage');
+        const chatbotBody = document.getElementById('chatbotBody');
+
+        // Toggle chatbot window
+        chatbotToggle.addEventListener('click', function() {
+            chatbotWindow.classList.toggle('show');
+        });
+
+        closeChatbot.addEventListener('click', function() {
+            chatbotWindow.classList.remove('show');
+        });
+
+        // Send message function
+        function sendChatMessage() {
+            const message = chatbotInput.value.trim();
+            if (message === '') return;
+
+            // Add user message
+            addChatMessage(message, 'user');
+            chatbotInput.value = '';
+
+            // Show typing indicator
+            showTypingIndicator();
+
+            // Simulate AI response
+            setTimeout(() => {
+                hideTypingIndicator();
+                const response = generateAIResponse(message);
+                addChatMessage(response, 'ai');
+            }, 1500);
+        }
+
+        // Add chat message to the chat
+        function addChatMessage(message, sender) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `chat-message ${sender}`;
+            messageDiv.innerHTML = `<div class="chat-bubble">${message}</div>`;
+            chatbotBody.appendChild(messageDiv);
+            chatbotBody.scrollTop = chatbotBody.scrollHeight;
+        }
+
+        // Show typing indicator
+        function showTypingIndicator() {
+            const typingDiv = document.createElement('div');
+            typingDiv.className = 'chat-message ai';
+            typingDiv.id = 'typingIndicator';
+            typingDiv.innerHTML = `
+                <div class="typing-indicator">
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                </div>
+            `;
+            chatbotBody.appendChild(typingDiv);
+            chatbotBody.scrollTop = chatbotBody.scrollHeight;
+        }
+
+        // Hide typing indicator
+        function hideTypingIndicator() {
+            const typingIndicator = document.getElementById('typingIndicator');
+            if (typingIndicator) {
+                typingIndicator.remove();
+            }
+        }
+
+        // Generate AI response based on keywords
+        function generateAIResponse(message) {
+            const lowerMessage = message.toLowerCase();
+            
+            if (lowerMessage.includes('ราคา') || lowerMessage.includes('price')) {
+                return 'ราคาแพ็คเกจของเราเริ่มต้นที่ ฿199/เดือน สำหรับ VPS Forex และ ฿1,500/ปี สำหรับ Web Hosting ครับ ต้องการทราบรายละเอียดเพิ่มเติมหรือไม่?';
+            } else if (lowerMessage.includes('vps')) {
+                return 'เรามีบริการ VPS หลายประเภทครับ ได้แก่ VPS Forex สำหรับเทรด, VPS Linux สำหรับนักพัฒนา, และ VPS Windows สำหรับธุรกิจ คุณสนใจประเภทไหนครับ?';
+            } else if (lowerMessage.includes('hosting') || lowerMessage.includes('โฮสติ้ง')) {
+                return 'บริการ Web Hosting ของเรามี 4 แพ็คเกจ คือ Biz Starter, Biz Growth, Biz Pro และ Biz Enterprise รองรับ NVMe SSD และ SSL ฟรีครับ';
+            } else if (lowerMessage.includes('ติดต่อ') || lowerMessage.includes('contact')) {
+                return 'คุณสามารถติดต่อเราได้ที่\nโทร: 081-088-8269\nLine: https://lin.ee/8GzYFMo\nFacebook: https://m.me/557079864149621';
+            } else if (lowerMessage.includes('สมัคร') || lowerMessage.includes('register')) {
+                return 'คุณสามารถสมัครสมาชิกได้ที่ https://client.bizbox.in.th/index.php?/signup/ หรือคลิกปุ่ม "สมัครสมาชิก" ด้านบนครับ';
+            } else if (lowerMessage.includes('ชำระเงิน') || lowerMessage.includes('จ่ายเงิน')) {
+                return 'การชำระเงินสามารถทำได้ผ่านธนาคารไทยพาณิชย์ เลขที่บัญชี 202-276-513-3 หรือผ่านพร้อมเพย์ 081-088-8269 ครับ';
+            } else {
+                const responses = [
+                    'ขอบคุณที่สนใจบริการของเราครับ มีอะไรให้ช่วยเหลือเพิ่มเติมไหม?',
+                    'ฉันสามารถช่วยเหลือคุณเรื่องบริการต่างๆ ของ BizBox ได้ครับ ลองถามเรื่องที่คุณสนใจได้เลย',
+                    'BizBox มีบริการครบครันทั้ง Web Hosting, VPS และ Email ครับ ต้องการทราบข้อมูลเพิ่มเติมเรื่องไหนครับ?',
+                    'หากต้องการความช่วยเหลือจากทีมงาน สามารถติดต่อได้ตลอด 24 ชั่วโมงครับ'
+                ];
+                return responses[Math.floor(Math.random() * responses.length)];
+            }
+        }
+
+        // Event listeners for chatbot
+        sendMessage.addEventListener('click', sendChatMessage);
+        chatbotInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendChatMessage();
+            }
+        });
+
         // Scroll animations
         const observerOptions = {
             root: null,
@@ -1209,7 +2010,7 @@
         }, observerOptions);
 
         // Observe all cards
-        document.querySelectorAll('.service-card, .pricing-card, .contact-card').forEach(card => {
+        document.querySelectorAll('.service-card, .pricing-card, .contact-card, .testimonial-card').forEach(card => {
             observer.observe(card);
         });
 
