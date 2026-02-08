@@ -1,28 +1,30 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO Configuration -->
-    <title>ส่วนลด Hostinger ล่าสุด - เปลี่ยนสักวันหนึ่งให้เป็นวันแรก | Tuikub</title>
-    <meta name="description" content="เปิดตัวเว็บไซต์และขยายธุรกิจของคุณกับ Hostinger เริ่มต้นเพียง ฿29.00/เดือน พร้อมฟรีโดเมนและ SSL โฮสติ้ง WordPress ที่เร็วและคุ้มค่าที่สุด">
-    <meta name="keywords" content="Hostinger, เว็บโฮสติ้ง, จดโดเมน, WordPress Hosting, สอนทำเว็บ, Hostinger ส่วนลด, ราคา Hostinger, สร้างเว็บ, n8n hosting, vps hosting, จดโดเมนราคาถูก">
+    <title>รวมแพ็กเกจ Hostinger ครบจบในที่เดียว | ส่วนลดสูงสุด 85% | Tuikub</title>
+    <meta name="description" content="รวมราคา Hostinger ทุกแพ็กเกจ Web Hosting, VPS, Website Builder, n8n, Horizons และ Email Hosting เริ่มต้นเพียง 29 บาท พร้อมส่วนลดพิเศษที่นี่">
+    <meta name="keywords" content="Hostinger, Web Hosting, VPS, Website Builder, n8n hosting, Horizons, Email Hosting, จดโดเมน, ส่วนลด Hostinger">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --primary: #673DE6; /* Hostinger Purple */
+            --primary: #673DE6;
             --primary-dark: #5025D1;
-            --accent: #FF5C62; /* Hot Pink for CTA */
+            --accent: #FF5C62;
             --text-dark: #2F3640;
             --text-gray: #555;
             --bg-light: #F4F5F7;
             --success: #00B894;
-            --badge-yellow: #DFFF4F; /* Badge Color matching image */
+            --badge-yellow: #DFFF4F;
             --badge-text: #000;
+            --dark-bg: #0F0F16;
+            --dark-card: #1C1C28;
         }
 
         * {
@@ -52,11 +54,11 @@
         
         .btn {
             display: inline-block;
-            padding: 14px 40px;
+            padding: 12px 30px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 1rem;
             transition: all 0.3s ease;
             cursor: pointer;
             border: none;
@@ -70,7 +72,6 @@
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(103, 61, 230, 0.5);
             background-color: var(--primary-dark);
         }
 
@@ -85,14 +86,14 @@
             color: white;
         }
 
-        /* Header */
+        /* Header & Nav */
         header {
             background: white;
             padding: 15px 0;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
         }
         
         .nav-flex {
@@ -111,92 +112,54 @@
             gap: 10px;
         }
         
-        .logo span { color: var(--primary); }
-
-        /* Navigation Menu */
+        /* Scrollable Nav for Desktop/Mobile */
         .nav-menu {
             display: flex;
-            gap: 20px;
+            gap: 15px;
             align-items: center;
+            overflow-x: auto;
+            padding-bottom: 5px; /* For scrollbar space */
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .nav-menu::-webkit-scrollbar {
+            height: 0px;
+            background: transparent;
         }
 
         .nav-link {
             text-decoration: none;
             color: var(--text-dark);
             font-weight: 500;
-            font-size: 1rem;
-            transition: color 0.2s;
+            font-size: 0.95rem;
+            white-space: nowrap;
+            padding: 5px 10px;
+            border-radius: 8px;
+            transition: background 0.2s;
         }
 
-        .nav-link:hover {
+        .nav-link:hover, .nav-link.active {
+            background: #f0ebff;
             color: var(--primary);
         }
         
         .nav-badge {
             background-color: #FFD966;
             color: #333;
-            font-size: 0.7rem;
-            padding: 2px 6px;
+            font-size: 0.65rem;
+            padding: 2px 5px;
             border-radius: 4px;
-            margin-left: 5px;
+            margin-left: 3px;
             vertical-align: middle;
             font-weight: 700;
         }
 
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #1C1C28 0%, #2F2F4F 100%);
-            color: white;
-            padding: 100px 0 80px;
-            text-align: center;
-        }
+        /* Sections Common */
+        .section-padding { padding: 80px 0; border-bottom: 1px solid #eee; }
+        .section-title { font-size: 2.2rem; font-weight: 700; margin-bottom: 15px; text-align: center;}
+        .section-desc { text-align: center; color: #666; max-width: 700px; margin: 0 auto 50px; font-size: 1.1rem; }
 
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            line-height: 1.2;
-            font-weight: 700;
-        }
-        
-        .hero h1 span {
-            color: #9D76FF;
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 30px;
-            opacity: 0.9;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .hero-offer {
-            font-size: 1.5rem;
-            margin-bottom: 40px;
-            font-weight: 500;
-        }
-        
-        .hero-offer span {
-            font-weight: 700;
-            color: #FFD966;
-        }
-        
-        .hero-badge {
-            display: inline-block;
-            background: rgba(255,255,255,0.1);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-        }
-
-        /* Pricing Table Section */
-        .pricing-section {
-            padding: 80px 0;
-            background-color: var(--bg-light);
-        }
-
+        /* Pricing Cards */
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -206,537 +169,96 @@
 
         .pricing-card {
             background: white;
-            border-radius: 12px;
-            padding: 30px 20px;
-            text-align: left;
-            position: relative;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
+            border-radius: 16px;
+            padding: 30px 25px;
             border: 1px solid #eee;
+            position: relative;
+            transition: transform 0.3s;
             display: flex;
             flex-direction: column;
         }
 
-        .pricing-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        }
-
-        .pricing-card.popular {
+        .pricing-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+        
+        .pricing-card.highlight {
             border: 2px solid var(--primary);
-            background: white;
-            order: -1;
-        }
-        
-        .popular-header {
-            background: var(--primary);
-            color: white;
-            text-align: center;
-            padding: 8px;
-            border-radius: 10px 10px 0 0;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-        
-        .pricing-card.popular {
-            padding-top: 45px;
-        }
-
-        .discount-badge {
-            background: var(--badge-yellow);
-            color: var(--badge-text);
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            position: absolute;
-            top: 20px;
-            right: 20px;
-        }
-        
-        .pricing-card.popular .discount-badge {
-            top: 50px;
-        }
-
-        .plan-name {
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 5px;
-        }
-        
-        .plan-desc {
-            font-size: 0.85rem;
-            color: #777;
-            margin-bottom: 20px;
-            min-height: 40px;
-        }
-
-        .old-price {
-            text-decoration: line-through;
-            color: #999;
-            font-size: 0.9rem;
-        }
-
-        .price-row {
-            display: flex;
-            align-items: baseline;
-            margin-bottom: 5px;
-        }
-
-        .current-price {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--text-dark);
-        }
-        
-        .price-period {
-            font-size: 1rem;
-            color: #555;
-            margin-left: 5px;
-        }
-        
-        .free-months {
-            color: var(--primary);
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-            display: block;
-            height: 24px;
-        }
-
-        .pricing-btn {
-            width: 100%;
-            padding: 12px;
-            border-radius: 8px;
-            text-align: center;
-            font-weight: 700;
-            text-decoration: none;
-            margin-bottom: 25px;
-            transition: 0.2s;
-        }
-        
-        .btn-select {
-            border: 1px solid var(--text-dark);
-            color: var(--text-dark);
-            background: transparent;
-        }
-        
-        .btn-select:hover {
-            background: #f0f0f0;
-        }
-        
-        .btn-select-primary {
-            background: var(--text-dark);
-            color: white;
-            border: 1px solid var(--text-dark);
-        }
-        
-        .btn-select-primary:hover {
-            opacity: 0.9;
-            transform: translateY(-2px);
-        }
-
-        .features-list {
-            list-style: none;
-            text-align: left;
-            margin-top: auto;
-        }
-
-        .features-list li {
-            margin-bottom: 10px;
-            padding-left: 25px;
-            position: relative;
-            font-size: 0.85rem;
-            color: #444;
-        }
-
-        .features-list li::before {
-            content: "✓";
-            color: var(--success);
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-        }
-        
-        .feature-bold {
-            font-weight: 600;
-            color: var(--text-dark);
-        }
-
-        /* --- n8n Section (Dark Theme) --- */
-        .n8n-section {
-            background-color: #0F0F16;
-            color: white;
-            padding: 80px 0;
-        }
-
-        .n8n-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .n8n-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .n8n-subtitle {
-            color: #aaa;
-            font-size: 1.1rem;
-        }
-
-        .n8n-card {
-            background: #1C1C28;
-            border: 1px solid #333;
-            border-radius: 12px;
-            padding: 30px 20px;
-            color: white;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            transition: 0.3s;
-        }
-        
-        .n8n-card:hover {
-            border-color: #673DE6;
-            transform: translateY(-5px);
-        }
-
-        .n8n-card.highlight {
-            border: 2px solid #673DE6;
-            background: #241940;
-            box-shadow: 0 0 20px rgba(103, 61, 230, 0.2);
-            order: -1;
+            background: #fff;
             padding-top: 50px;
         }
 
-        .n8n-badge {
-            background: var(--badge-yellow);
-            color: #000;
-            font-size: 0.75rem;
-            font-weight: 800;
-            padding: 2px 10px;
-            border-radius: 10px;
+        .card-tag {
             position: absolute;
-            top: 20px;
-            right: 20px;
+            top: 20px; right: 20px;
+            background: #e0f7fa; color: #006064;
+            font-size: 0.8rem; font-weight: 700;
+            padding: 4px 10px; border-radius: 20px;
         }
         
-        .n8n-card.highlight .n8n-badge {
-            top: 50px;
+        .highlight .card-tag { top: 50px; background: var(--badge-yellow); color: black; }
+
+        .popular-label {
+            position: absolute; top: 0; left: 0; width: 100%;
+            background: var(--primary); color: white;
+            text-align: center; padding: 8px;
+            font-weight: 600; font-size: 0.9rem;
+            border-radius: 14px 14px 0 0;
         }
 
-        .n8n-popular-header {
-            background: #673DE6;
-            color: white;
-            text-align: center;
-            padding: 8px;
-            border-radius: 10px 10px 0 0;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
-        .n8n-price {
-            font-size: 2rem;
-            font-weight: 700;
-            color: white;
-            margin: 10px 0;
-        }
+        .plan-name { font-size: 1.3rem; font-weight: 700; margin-bottom: 5px; }
+        .plan-sub { font-size: 0.9rem; color: #777; margin-bottom: 20px; min-height: 40px; }
         
-        .n8n-price span {
-            font-size: 1rem;
-            color: #aaa;
-            font-weight: 400;
-        }
+        .price-area { margin-bottom: 20px; }
+        .price-old { text-decoration: line-through; color: #999; font-size: 0.9rem; }
+        .price-new { font-size: 2.2rem; font-weight: 700; color: var(--text-dark); line-height: 1.1; }
+        .price-unit { font-size: 1rem; color: #555; font-weight: 400; }
+        .free-bonus { color: var(--primary); font-weight: 600; font-size: 0.9rem; margin-top: 5px; height: 20px;}
 
-        .n8n-old-price {
-            text-decoration: line-through;
-            color: #777;
-            font-size: 0.9rem;
-        }
-
-        .n8n-btn {
-            background: transparent;
-            border: 1px solid white;
-            color: white;
-            width: 100%;
-            padding: 10px;
-            border-radius: 8px;
-            font-weight: 600;
-            margin: 20px 0;
-            cursor: pointer;
+        .card-btn {
+            width: 100%; padding: 12px; border-radius: 8px;
+            text-align: center; font-weight: 700; text-decoration: none;
+            margin-bottom: 20px; border: 1px solid var(--text-dark);
+            color: var(--text-dark); background: transparent;
             transition: 0.2s;
-            text-decoration: none;
-            display: inline-block;
-            text-align: center;
         }
+        .card-btn:hover { background: #f5f5f5; }
+        .highlight .card-btn { background: var(--text-dark); color: white; }
+        .highlight .card-btn:hover { opacity: 0.9; }
 
-        .n8n-btn:hover {
-            background: white;
-            color: black;
-        }
+        .features { list-style: none; margin-top: auto; }
+        .features li { margin-bottom: 10px; padding-left: 25px; position: relative; font-size: 0.9rem; color: #444; }
+        .features li::before { content: "✓"; color: var(--success); position: absolute; left: 0; font-weight: bold; }
+        .feature-bold { font-weight: 700; color: black; }
+
+        /* Dark Theme Section (VPS/n8n/Horizons) */
+        .dark-section { background: var(--dark-bg); color: white; }
+        .dark-section .section-title { color: white; }
+        .dark-section .section-desc { color: #aaa; }
+        .dark-card { background: var(--dark-card); border-color: #333; color: white; }
+        .dark-card:hover { border-color: var(--primary); }
+        .dark-card .price-new { color: white; }
+        .dark-card .card-btn { border-color: white; color: white; }
+        .dark-card .card-btn:hover { background: white; color: black; }
+        .dark-card .features li { color: #ddd; }
+        .dark-card.highlight { background: #241940; border-color: var(--primary); }
+        .dark-card.highlight .card-btn { background: white; color: black; border-color: white; }
+
+        /* PDPA & AI Chat */
+        .pdpa-banner { position: fixed; bottom: 0; left: 0; width: 100%; background: white; padding: 15px 20px; box-shadow: 0 -5px 20px rgba(0,0,0,0.1); z-index: 999; display: flex; align-items: center; justify-content: center; gap: 20px; font-size: 0.9rem; }
+        .pdpa-btn { background: var(--primary); color: white; border: none; padding: 8px 20px; border-radius: 5px; cursor: pointer; }
         
-        .n8n-card.highlight .n8n-btn {
-            background: white;
-            color: black;
-            border: none;
-        }
+        .ai-chat-btn { position: fixed; bottom: 80px; right: 20px; width: 60px; height: 60px; background: linear-gradient(135deg, #744AF4, #673DE6); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; cursor: pointer; box-shadow: 0 5px 20px rgba(103, 61, 230, 0.4); z-index: 1000; border: 3px solid white; transition: transform 0.2s; }
+        .ai-chat-btn:hover { transform: scale(1.1); }
         
-        .n8n-card.highlight .n8n-btn:hover {
-            background: #eee;
-        }
+        .ai-modal { display: none; position: fixed; bottom: 150px; right: 20px; width: 350px; background: white; border-radius: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); z-index: 1000; overflow: hidden; border: 1px solid #eee; }
+        .ai-header { background: white; padding: 15px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; font-weight: bold; }
+        .ai-body { padding: 20px; background: #f9f9fb; text-align: center; height: 350px; display: flex; flex-direction: column; justify-content: center; }
+        .ai-option { background: white; padding: 10px; margin: 5px 0; border-radius: 8px; border: 1px solid #eee; cursor: pointer; text-align: left; font-size: 0.9rem; color: #333; display: block; text-decoration: none;}
+        .ai-option:hover { border-color: var(--primary); color: var(--primary); }
 
-        .n8n-specs {
-            margin-top: 10px;
-            border-top: 1px solid #333;
-            padding-top: 20px;
-        }
-
-        .n8n-specs-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 12px;
-            font-size: 0.9rem;
-            color: #ddd;
-        }
-        
-        .n8n-specs-item svg {
-            width: 18px;
-            height: 18px;
-            fill: #aaa;
-        }
-
-        .n8n-features-box {
-            background: #1C1C28;
-            border-radius: 12px;
-            padding: 40px;
-            margin-top: 50px;
-            text-align: center;
-        }
-        
-        .n8n-features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            text-align: left;
-            margin-top: 20px;
-        }
-        
-        .n8n-check-item {
-            color: #ddd;
-            display: flex;
-            gap: 10px;
-            font-size: 0.9rem;
-            margin-bottom: 10px;
-        }
-        
-        .n8n-check-item::before {
-            content: "✓";
-            color: var(--success);
-            font-weight: bold;
-        }
-
-        /* --- Domain & Promo Section (New Design) --- */
-        .promo-domain-section {
-            padding: 80px 0;
-            background: var(--bg-light);
-        }
-
-        .promo-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .promo-card {
-            background: linear-gradient(135deg, #744AF4 0%, #5B2FD4 100%);
-            border-radius: 16px;
-            padding: 40px;
-            color: white;
-            position: relative;
-            overflow: hidden;
-            text-decoration: none;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            min-height: 280px;
-            transition: transform 0.3s;
-        }
-
-        .promo-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .promo-title {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .promo-subtitle {
-            font-size: 1rem;
-            opacity: 0.9;
-            margin-bottom: 20px;
-            max-width: 90%;
-            line-height: 1.5;
-        }
-
-        .promo-price-block {
-            margin-top: auto;
-        }
-
-        .promo-old-price {
-            text-decoration: line-through;
-            opacity: 0.7;
-            font-size: 1rem;
-        }
-
-        .promo-new-price {
-            font-size: 2rem;
-            font-weight: 700;
-        }
-
-        .promo-new-price span {
-            font-size: 1.1rem;
-            font-weight: 400;
-        }
-
-        /* Green % Square Icon */
-        .percent-icon {
-            position: absolute;
-            bottom: 30px;
-            right: 30px;
-            background: var(--badge-yellow);
-            color: black;
-            width: 80px;
-            height: 80px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            font-weight: 800;
-            transform: rotate(-15deg);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-
-        /* Domain Search Specifics */
-        .domain-badge {
-            position: absolute;
-            top: 30px;
-            right: 30px;
-            background: rgba(0,0,0,0.3);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-
-        .search-bar-new {
-            background: white;
-            border-radius: 50px;
-            padding: 5px;
-            display: flex;
-            align-items: center;
-            margin-top: 30px;
-        }
-
-        .search-input-new {
-            border: none;
-            outline: none;
-            padding: 10px 20px;
-            flex: 1;
-            font-size: 1rem;
-            color: #333;
-            border-radius: 50px;
-        }
-
-        .search-btn-new {
-            background: #121212;
-            color: white;
-            border: none;
-            padding: 10px 25px;
-            border-radius: 50px;
-            font-weight: 600;
-            cursor: pointer;
-            text-decoration: none;
-            transition: opacity 0.2s;
-        }
-
-        .search-btn-new:hover {
-            opacity: 0.9;
-        }
-
-        .promo-arrow {
-            position: absolute;
-            top: 30px;
-            right: 30px;
-            font-size: 1.5rem;
-            opacity: 0.8;
-        }
-
-        /* FAQ Section */
-        .faq-section {
-            padding: 60px 0;
-            background: white;
-        }
-
-        .faq-item {
-            border-bottom: 1px solid #ddd;
-            padding: 20px 0;
-        }
-
-        .faq-question {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 10px;
-            color: var(--text-dark);
-        }
-
-        /* Footer */
-        footer {
-            background: #f8f9fa;
-            padding: 40px 0;
-            text-align: center;
-            font-size: 0.9rem;
-            color: #666;
-            border-top: 1px solid #eee;
-        }
-
-        /* Responsive */
         @media (max-width: 900px) {
-            .hero h1 { font-size: 2.5rem; }
-            .pricing-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
-            .nav-menu { display: none; }
-        }
-        
-        @media (min-width: 1200px) {
-            .pricing-grid {
-                 grid-template-columns: repeat(4, 1fr);
-            }
-            .n8n-grid {
-                display: grid;
-                grid-template-columns: repeat(4, 1fr);
-                gap: 20px;
-                align-items: flex-start;
-            }
-        }
-        
-        @media (max-width: 1199px) {
-            .n8n-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                gap: 20px;
-            }
+            .pricing-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+            .nav-menu { padding: 10px; }
+            .hero h1 { font-size: 2.2rem; }
         }
     </style>
 </head>
@@ -744,375 +266,360 @@
 
     <header>
         <div class="container nav-flex">
-            <a href="#" class="logo">
-                <svg viewBox="0 0 32 32" width="32" height="32" fill="#673DE6"><path d="M26.7 4H5.3C4.6 4 4 4.6 4 5.3v21.4c0 .7.6 1.3 1.3 1.3h21.4c.7 0 1.3-.6 1.3-1.3V5.3c0-.7-.6-1.3-1.3-1.3zm-2.7 20h-5.3v-5.3h5.3V24zm0-8h-5.3v-5.3h5.3V16zm-8 8H10.7v-5.3H16V24zm0-8H10.7v-5.3H16V16z"/></svg>
-                HOSTINGER <span>x TUIKUB</span>
+            <a href="https://www.hostinger.com/th/referral?REFERRALCODE=tuikub" class="logo">
+                HOSTINGER <span style="color:var(--primary); font-size:0.8em; margin-left:5px;">x TUIKUB</span>
             </a>
             
             <nav class="nav-menu">
-                <a href="#pricing" class="nav-link">โฮสติ้ง</a>
-                <a href="#n8n" class="nav-link">n8n VPS <span class="nav-badge">ใหม่</span></a>
-                <a href="#domain" class="nav-link">โดเมน</a>
+                <a href="#web-hosting" class="nav-link">Web Hosting</a>
+                <a href="#website-builder" class="nav-link">Website Builder</a>
+                <a href="#vps" class="nav-link">VPS</a>
+                <a href="#n8n" class="nav-link">n8n <span class="nav-badge">HOT</span></a>
+                <a href="#horizons" class="nav-link">Horizons <span class="nav-badge">AI</span></a>
+                <a href="#email" class="nav-link">Email</a>
+                <a href="#domain" class="nav-link">Domain</a>
             </nav>
-
-            <a href="https://hostinger.in.th?REFERRALCODE=tuikub" class="btn btn-outline" style="padding: 8px 20px; font-size: 0.9rem; border-radius: 5px;">ดูโปรโมชั่น</a>
         </div>
     </header>
 
     <section class="hero">
         <div class="container">
-            <div class="hero-badge">🚀 ยอดขายอันดับ 1 ในไทย</div>
-            <h1>เปลี่ยนสักวันหนึ่งให้เป็น <span>วันแรก</span></h1>
-            <p>เปิดตัวเว็บไซต์และขยายธุรกิจของคุณ – Hostinger พร้อมสนับสนุนคุณ<br>ด้วยเทคโนโลยีที่ทันสมัยที่สุดและราคาที่เข้าถึงง่าย</p>
-            
-            <div class="hero-offer">
-                จาก <span>฿49.00</span>/เดือน + <span>2 เดือน ฟรี</span>
-            </div>
-            
-            <a href="https://hostinger.in.th?REFERRALCODE=tuikub" class="btn btn-primary">เริ่มเลย</a>
-            
-            <div style="margin-top: 25px; font-size: 0.9rem; opacity: 0.7;">
-                ✅ รับประกันคืนเงิน 30 วัน ไม่มีข้อผูกมัด
-            </div>
+            <div class="hero-badge">🚀 ข้อเสนอพิเศษเฉพาะคุณ</div>
+            <h1>ทุกสิ่งที่คุณต้องการ<br>เพื่อสร้างธุรกิจออนไลน์</h1>
+            <p>รวมแพ็กเกจที่ดีที่สุดจาก Hostinger ไว้ในที่เดียว<br>เริ่มต้นง่ายๆ ในราคาที่คุ้มค่าที่สุด</p>
+            <div class="hero-offer">เริ่มต้นเพียง <span>฿29.00</span>/เดือน</div>
+            <a href="https://www.hostinger.com/th/referral?REFERRALCODE=tuikub" class="btn btn-primary">รับข้อเสนอทั้งหมด</a>
         </div>
     </section>
 
-    <!-- Shared Hosting Pricing Table -->
-    <section class="pricing-section" id="pricing">
+    <!-- 1. Web Hosting -->
+    <section id="web-hosting" class="section-padding">
         <div class="container">
-            <h2 class="section-title text-center mb-4">เลือกแพ็กเกจ Web Hosting</h2>
+            <h2 class="section-title">Web Hosting</h2>
+            <p class="section-desc">โซลูชันที่ได้รับความนิยมมากที่สุดสำหรับผู้เริ่มต้นและมืออาชีพ</p>
             
             <div class="pricing-grid">
-                <!-- Single Plan -->
                 <div class="pricing-card">
-                    <span class="discount-badge">ส่วนลด 79%</span>
+                    <div class="card-tag">-79%</div>
                     <div class="plan-name">Single</div>
-                    <div class="plan-desc">ดีที่สุดสำหรับผู้ประกอบการคนเดียว</div>
-                    
-                    <div class="old-price">฿139.00</div>
-                    <div class="price-row">
-                        <div class="current-price">฿29.00</div>
-                        <div class="price-period">/เดือน</div>
+                    <div class="plan-sub">สำหรับเว็บเดียว</div>
+                    <div class="price-area">
+                        <div class="price-old">฿139.00</div>
+                        <div class="price-new">฿29.00<span class="price-unit">/ด</span></div>
+                        <div class="free-bonus"></div>
                     </div>
-                    <span class="free-months"></span> 
-
-                    <a href="https://hostinger.in.th?REFERRALCODE=tuikub" class="pricing-btn btn-select">เลือกแพ็กเกจ</a>
-
-                    <ul class="features-list">
-                        <li><span class="feature-bold">1</span> เว็บไซต์</li>
-                        <li><span class="feature-bold">10 GB</span> พื้นที่เก็บข้อมูล (SSD)</li>
-                        <li><span class="feature-bold">100 GB</span> แบนด์วิดธ์</li>
-                        <li>1 กล่องจดหมายต่อเว็บไซต์ - ฟรี 1 ปี</li>
+                    <a href="https://www.hostinger.com/th/referral?REFERRALCODE=tuikub" class="card-btn">เลือกแพ็กเกจ</a>
+                    <ul class="features">
+                        <li>1 เว็บไซต์</li>
+                        <li>50 GB SSD Storage</li>
+                        <li>1 Email Account</li>
                     </ul>
                 </div>
 
-                <!-- Premium Plan (Highlight) -->
-                <div class="pricing-card popular">
-                    <div class="popular-header">นิยมมากที่สุด</div>
-                    <span class="discount-badge">ส่วนลด 79%</span>
+                <div class="pricing-card highlight">
+                    <div class="popular-label">นิยมมากที่สุด</div>
+                    <div class="card-tag">-79%</div>
                     <div class="plan-name">Premium</div>
-                    <div class="plan-desc">ทุกสิ่งที่คุณต้องการเพื่อเริ่มต้น</div>
-                    
-                    <div class="old-price">฿229.00</div>
-                    <div class="price-row">
-                        <div class="current-price">฿49.00</div>
-                        <div class="price-period">/เดือน</div>
+                    <div class="plan-sub">สำหรับธุรกิจส่วนตัว</div>
+                    <div class="price-area">
+                        <div class="price-old">฿229.00</div>
+                        <div class="price-new">฿49.00<span class="price-unit">/ด</span></div>
+                        <div class="free-bonus">+2 เดือน ฟรี</div>
                     </div>
-                    <span class="free-months">+2 เดือน ฟรี</span>
-
-                    <a href="https://hostinger.in.th?REFERRALCODE=tuikub" class="pricing-btn btn-select-primary">เลือกแพ็กเกจ</a>
-
-                    <ul class="features-list">
+                    <a href="https://www.hostinger.com/th/referral?REFERRALCODE=tuikub" class="card-btn">เลือกแพ็กเกจ</a>
+                    <ul class="features">
                         <li><span class="feature-bold">100</span> เว็บไซต์</li>
-                        <li><span class="feature-bold">20 GB</span> พื้นที่เก็บข้อมูล (SSD)</li>
-                        <li><span class="feature-bold">ฟรี</span> โดเมน (มูลค่า 399.-)</li>
-                        <li><span class="feature-bold">ไม่จำกัด</span> แบนด์วิดธ์</li>
+                        <li><span class="feature-bold">100 GB</span> SSD</li>
+                        <li><span class="feature-bold">ฟรี</span> โดเมน</li>
                         <li>ฟรี Email ไม่จำกัด</li>
                     </ul>
                 </div>
 
-                <!-- Business Plan -->
                 <div class="pricing-card">
-                    <span class="discount-badge">ส่วนลด 75%</span>
+                    <div class="card-tag">-75%</div>
                     <div class="plan-name">Business</div>
-                    <div class="plan-desc">เครื่องมือและพลังเพิ่มเติมสำหรับการเติบโต</div>
-                    
-                    <div class="old-price">฿279.00</div>
-                    <div class="price-row">
-                        <div class="current-price">฿69.00</div>
-                        <div class="price-period">/เดือน</div>
+                    <div class="plan-sub">ประสิทธิภาพสูง x5</div>
+                    <div class="price-area">
+                        <div class="price-old">฿279.00</div>
+                        <div class="price-new">฿69.00<span class="price-unit">/ด</span></div>
+                        <div class="free-bonus">+2 เดือน ฟรี</div>
                     </div>
-                    <span class="free-months">+2 เดือน ฟรี</span>
-
-                    <a href="https://hostinger.in.th?REFERRALCODE=tuikub" class="pricing-btn btn-select">เลือกแพ็กเกจ</a>
-
-                    <ul class="features-list">
-                        <li>ประสิทธิภาพเพิ่มขึ้น <span class="feature-bold">5x</span></li>
-                        <li><span class="feature-bold">100</span> เว็บไซต์</li>
-                        <li><span class="feature-bold">50 GB</span> พื้นที่เก็บข้อมูล NVMe</li>
-                        <li>สำรองข้อมูลรายวัน</li>
+                    <a href="https://www.hostinger.com/th/referral?REFERRALCODE=tuikub" class="card-btn">เลือกแพ็กเกจ</a>
+                    <ul class="features">
+                        <li>200 GB NVMe Storage</li>
+                        <li>Backup รายวัน</li>
                         <li>ฟรี CDN</li>
-                    </ul>
-                </div>
-
-                <!-- Cloud Startup Plan -->
-                <div class="pricing-card">
-                    <span class="discount-badge">ส่วนลด 66%</span>
-                    <div class="plan-name">Cloud Startup</div>
-                    <div class="plan-desc">เพิ่มพลังให้เว็บไซต์ของคุณมากขึ้น 20 เท่า</div>
-                    
-                    <div class="old-price">฿589.00</div>
-                    <div class="price-row">
-                        <div class="current-price">฿199.00</div>
-                        <div class="price-period">/เดือน</div>
-                    </div>
-                    <span class="free-months">+2 เดือน ฟรี</span>
-
-                    <a href="https://hostinger.in.th?REFERRALCODE=tuikub" class="pricing-btn btn-select">เลือกแพ็กเกจ</a>
-
-                    <ul class="features-list">
-                        <li><span class="feature-bold">100</span> เว็บไซต์</li>
-                        <li><span class="feature-bold">100 GB</span> พื้นที่เก็บข้อมูล NVMe</li>
-                        <li><span class="feature-bold">Dedicated IP</span></li>
-                        <li>ทรัพยากรระดับ Cloud</li>
-                        <li>ลำดับความสำคัญในการช่วยเหลือ</li>
+                        <li>เครื่องมือ AI ขั้นสูง</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- NEW n8n VPS Pricing Section (Dark Theme) -->
-    <section class="n8n-section" id="n8n">
+    <!-- 2. Website Builder -->
+    <section id="website-builder" class="section-padding" style="background:#fafafa;">
         <div class="container">
-            <div class="n8n-header">
-                <h2 class="n8n-title">มุ่งหน้าไปด้วยข้อเสนอสุดคุ้มจาก n8n</h2>
-                <p class="n8n-subtitle">รันเวิร์กโฟลว์อัตโนมัติด้วย VPS ประสิทธิภาพสูง พร้อม n8n ติดตั้งพร้อมใช้งาน</p>
-            </div>
-
-            <div class="n8n-grid">
-                <!-- KVM 1 -->
-                <div class="n8n-card">
-                    <span class="n8n-badge">ส่วนลด 58%</span>
-                    <div class="plan-name">KVM 1</div>
-                    <div class="n8n-old-price">฿359.00</div>
-                    <div class="n8n-price">฿149.00<span>/เดือน</span></div>
-                    
-                    <a href="https://hostinger.in.th?REFERRALCODE=tuikub" class="n8n-btn">เลือกแพ็กเกจ</a>
-
-                    <div class="n8n-specs">
-                        <div class="n8n-specs-item">
-                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
-                            1 vCPU core
-                        </div>
-                        <div class="n8n-specs-item">
-                            <svg viewBox="0 0 24 24"><path d="M2 20h20v-4H2v4zm2-3h2v2H4v-2zM2 4v4h20V4H2zm4 3H4V5h2v2zm-4 7h20v-4H2v4zm2-3h2v2H4v-2z"/></svg>
-                            RAM 4 GB
-                        </div>
-                        <div class="n8n-specs-item">
-                            <svg viewBox="0 0 24 24"><path d="M11 15h2v2h-2zm0-8h2v6h-2zm.99-5C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/></svg>
-                            พื้นที่ NVMe 50 GB
-                        </div>
-                        <div class="n8n-specs-item">
-                            <svg viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/></svg>
-                            แบนด์วิดท์ 4 TB
-                        </div>
-                    </div>
-                </div>
-
-                <!-- KVM 2 (Popular) -->
-                <div class="n8n-card highlight">
-                    <div class="n8n-popular-header">นิยมมากที่สุด</div>
-                    <span class="n8n-badge">ส่วนลด 64%</span>
-                    <div class="plan-name">KVM 2</div>
-                    <div class="n8n-old-price">฿559.00</div>
-                    <div class="n8n-price">฿199.00<span>/เดือน</span></div>
-                    <div style="color: #673DE6; font-size: 0.9rem; margin-bottom: 10px;">+1 เดือน ฟรี</div>
-                    
-                    <a href="https://hostinger.in.th?REFERRALCODE=tuikub" class="n8n-btn">เลือกแพ็กเกจ</a>
-
-                    <div class="n8n-specs">
-                        <div class="n8n-specs-item">
-                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
-                            2 vCPU cores
-                        </div>
-                        <div class="n8n-specs-item">
-                            <svg viewBox="0 0 24 24"><path d="M2 20h20v-4H2v4zm2-3h2v2H4v-2zM2 4v4h20V4H2zm4 3H4V5h2v2zm-4 7h20v-4H2v4zm2-3h2v2H4v-2z"/></svg>
-                            RAM 8 GB
-                        </div>
-                        <div class="n8n-specs-item">
-                            <svg viewBox="0 0 24 24"><path d="M11 15h2v2h-2zm0-8h2v6h-2zm.99-5C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/></svg>
-                            พื้นที่ NVMe 100 GB
-                        </div>
-                        <div class="n8n-specs-item">
-                            <svg viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/></svg>
-                            แบนด์วิดท์ 8 TB
-                        </div>
-                    </div>
-                </div>
-
-                <!-- KVM 4 -->
-                <div class="n8n-card">
-                    <span class="n8n-badge">ส่วนลด 72%</span>
-                    <div class="plan-name">KVM 4</div>
-                    <div class="n8n-old-price">฿909.00</div>
-                    <div class="n8n-price">฿259.00<span>/เดือน</span></div>
-                    
-                    <a href="https://hostinger.in.th?REFERRALCODE=tuikub" class="n8n-btn">เลือกแพ็กเกจ</a>
-
-                    <div class="n8n-specs">
-                        <div class="n8n-specs-item">
-                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
-                            4 vCPU cores
-                        </div>
-                        <div class="n8n-specs-item">
-                            <svg viewBox="0 0 24 24"><path d="M2 20h20v-4H2v4zm2-3h2v2H4v-2zM2 4v4h20V4H2zm4 3H4V5h2v2zm-4 7h20v-4H2v4zm2-3h2v2H4v-2z"/></svg>
-                            RAM 16 GB
-                        </div>
-                        <div class="n8n-specs-item">
-                            <svg viewBox="0 0 24 24"><path d="M11 15h2v2h-2zm0-8h2v6h-2zm.99-5C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/></svg>
-                            พื้นที่ NVMe 200 GB
-                        </div>
-                        <div class="n8n-specs-item">
-                            <svg viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/></svg>
-                            แบนด์วิดท์ 16 TB
-                        </div>
-                    </div>
-                </div>
-
-                <!-- KVM 8 -->
-                <div class="n8n-card">
-                    <span class="n8n-badge">ส่วนลด 70%</span>
-                    <div class="plan-name">KVM 8</div>
-                    <div class="n8n-old-price">฿1,739.00</div>
-                    <div class="n8n-price">฿519.00<span>/เดือน</span></div>
-                    
-                    <a href="https://hostinger.in.th?REFERRALCODE=tuikub" class="n8n-btn">เลือกแพ็กเกจ</a>
-
-                    <div class="n8n-specs">
-                        <div class="n8n-specs-item">
-                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
-                            8 vCPU cores
-                        </div>
-                        <div class="n8n-specs-item">
-                            <svg viewBox="0 0 24 24"><path d="M2 20h20v-4H2v4zm2-3h2v2H4v-2zM2 4v4h20V4H2zm4 3H4V5h2v2zm-4 7h20v-4H2v4zm2-3h2v2H4v-2z"/></svg>
-                            RAM 32 GB
-                        </div>
-                        <div class="n8n-specs-item">
-                            <svg viewBox="0 0 24 24"><path d="M11 15h2v2h-2zm0-8h2v6h-2zm.99-5C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/></svg>
-                            พื้นที่ NVMe 400 GB
-                        </div>
-                        <div class="n8n-specs-item">
-                            <svg viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/></svg>
-                            แบนด์วิดท์ 32 TB
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Features Summary -->
-            <div class="n8n-features-box">
-                <h3 style="font-size: 1.5rem; margin-bottom: 20px;">ทุกแพ็กเกจมีสิ่งที่คุณต้องการและมากกว่านั้น</h3>
-                <div class="n8n-features-grid">
-                    <div>
-                        <div class="n8n-check-item">เวิร์กโฟลว์แบบไม่จำกัด</div>
-                        <div class="n8n-check-item">ดำเนินการพร้อมกันแบบไม่จำกัด</div>
-                        <div class="n8n-check-item">Nodes ชุมชน</div>
-                    </div>
-                    <div>
-                        <div class="n8n-check-item">n8n พร้อมโหมดจัดลำดับ</div>
-                        <div class="n8n-check-item">n8n พร้อมเวิร์กโฟลว์สำเร็จรูป 100 รายการ</div>
-                        <div class="n8n-check-item">ติดตั้ง n8n ในคลิกเดียว</div>
-                    </div>
-                    <div>
-                        <div class="n8n-check-item">โหนดชุมชน n8n ของ Hostinger API</div>
-                        <div class="n8n-check-item">ผู้ช่วย AI ขับเคลื่อนโดย MCP</div>
-                        <div class="n8n-check-item">โดเมน .cloud ฟรี 1 ปี</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- NEW Domain & Promo Section -->
-    <section class="promo-domain-section" id="domain">
-        <div class="container">
-            <div class="promo-grid">
-                <!-- Left Card: Packages -->
-                <a href="https://hostinger.in.th?REFERRALCODE=tuikub" class="promo-card">
-                    <div class="promo-arrow">↗</div>
-                    <div>
-                        <h3 class="promo-title">แพ็กเกจและราคา</h3>
-                        <p class="promo-subtitle">สำรวจแพ็กเกจที่เต็มไปด้วยเครื่องมือ บริการ และฟีเจอร์ โบนัสที่มีในตัว</p>
-                    </div>
-                    <div class="promo-price-block">
-                        <div style="font-size: 0.9rem;">จาก</div>
-                        <div class="promo-old-price">฿229.00</div>
-                        <div class="promo-new-price">฿49.00<span>/เดือน</span></div>
-                    </div>
-                    <div class="percent-icon">%</div>
-                </a>
-
-                <!-- Right Card: Domain Search -->
-                <div class="promo-card">
-                    <div class="domain-badge">com - ฿199.00/ปีที่ 1</div>
-                    <div>
-                        <h3 class="promo-title">ค้นหาโดเมน</h3>
-                        <p class="promo-subtitle">ความประทับใจแรกมักจะคงอยู่ตลอดไป สร้างความประทับใจแรกของคุณด้วยชื่อโดเมนที่สมบูรณ์แบบ</p>
-                    </div>
-                    
-                    <div style="margin-top: auto;">
-                        <div class="search-bar-new">
-                            <input type="text" class="search-input-new" placeholder="bringyouridea.online" disabled style="background: white;">
-                            <a href="https://hostinger.in.th?REFERRALCODE=tuikub" class="search-btn-new">ค้นหา</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="faq-section">
-        <div class="container" style="max-width: 800px;">
-            <h2 class="section-title text-center mb-4">คำถามที่พบบ่อย (FAQ)</h2>
+            <h2 class="section-title">Website Builder</h2>
+            <p class="section-desc">สร้างเว็บไซต์ด้วย AI ง่ายๆ ไม่ต้องเขียนโค้ด ลากแล้ววางได้เลย</p>
             
-            <div class="faq-item">
-                <div class="faq-question">Q: n8n Hosting คืออะไร?</div>
-                <div class="faq-answer">
-                    A: n8n เป็นเครื่องมือ Workflow Automation ที่ทรงพลัง (คล้าย Zapier) แต่สามารถติดตั้งบน Server ตัวเองได้ ทำให้ประหยัดค่าใช้จ่ายและไม่มีขีดจำกัดจำนวน Task ที่รันครับ
+            <div class="pricing-grid" style="justify-content: center; max-width: 900px; margin: 0 auto;">
+                <div class="pricing-card">
+                    <div class="card-tag">-79%</div>
+                    <div class="plan-name">Premium Builder</div>
+                    <div class="plan-sub">ทุกสิ่งที่จำเป็นสำหรับการสร้างเว็บ</div>
+                    <div class="price-area">
+                        <div class="price-old">฿229.00</div>
+                        <div class="price-new">฿49.00<span class="price-unit">/ด</span></div>
+                        <div class="free-bonus">+3 เดือน ฟรี</div>
+                    </div>
+                    <a href="https://www.hostinger.com/th/referral?REFERRALCODE=tuikub" class="card-btn">สร้างเว็บไซต์เลย</a>
+                    <ul class="features">
+                        <li>AI Website Builder</li>
+                        <li>เทมเพลตดีไซเนอร์ 150+</li>
+                        <li>ฟีเจอร์ Marketing Integrations</li>
+                    </ul>
                 </div>
-            </div>
 
-            <div class="faq-item">
-                <div class="faq-question">Q: เริ่มต้นใช้งาน Hostinger ยากไหม?</div>
-                <div class="faq-answer">
-                    A: ง่ายมากครับ! ทันทีที่คุณสมัคร Hostinger จะมีระบบช่วยเหลือ (Wizard) พาคุณตั้งค่าเว็บไซต์ทีละขั้นตอน พร้อมระบบ AI ช่วยสร้างเว็บให้เสร็จในไม่กี่นาที
+                <div class="pricing-card highlight">
+                    <div class="popular-label">ขายดี</div>
+                    <div class="card-tag">-75%</div>
+                    <div class="plan-name">Business Builder</div>
+                    <div class="plan-sub">สำหรับร้านค้าออนไลน์ & AI</div>
+                    <div class="price-area">
+                        <div class="price-old">฿279.00</div>
+                        <div class="price-new">฿69.00<span class="price-unit">/ด</span></div>
+                        <div class="free-bonus">+3 เดือน ฟรี</div>
+                    </div>
+                    <a href="https://www.hostinger.com/th/referral?REFERRALCODE=tuikub" class="card-btn">สร้างร้านค้าเลย</a>
+                    <ul class="features">
+                        <li>ทุกอย่างใน Premium</li>
+                        <li>ฟีเจอร์ E-commerce เต็มรูปแบบ</li>
+                        <li>ไม่มีค่าธรรมเนียมการขาย (0%)</li>
+                        <li>เครื่องมือ AI เขียนบทความ</li>
+                    </ul>
                 </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">Q: VPS Hosting เหมาะกับใคร?</div>
-                <div class="faq-answer">
-                    A: เหมาะสำหรับเว็บที่มีคนเข้าเยอะ (Traffic สูง), โปรแกรมเมอร์ที่ต้องการ Root Access, หรือคนที่ต้องการรัน Script พิเศษอย่าง n8n หรือ Game Server ครับ
-                </div>
-            </div>
-
-            <div class="text-center" style="margin-top: 40px;">
-                <a href="https://hostinger.in.th?REFERRALCODE=tuikub" class="btn btn-primary">เริ่มต้นสร้างเว็บไซต์ของคุณเลย</a>
             </div>
         </div>
     </section>
+
+    <!-- 3. VPS Hosting -->
+    <section id="vps" class="section-padding dark-section">
+        <div class="container">
+            <h2 class="section-title">VPS Hosting</h2>
+            <p class="section-desc">ควบคุมเซิร์ฟเวอร์ได้ 100% (Root Access) ประสิทธิภาพสูงสุดด้วย KVM</p>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card dark-card">
+                    <div class="plan-name">KVM 1</div>
+                    <div class="price-area">
+                        <div class="price-old">฿359.00</div>
+                        <div class="price-new">฿149.00<span class="price-unit">/ด</span></div>
+                    </div>
+                    <a href="https://www.hostinger.com/th/referral?REFERRALCODE=tuikub" class="card-btn">เลือก KVM 1</a>
+                    <ul class="features">
+                        <li>1 vCPU Core</li>
+                        <li>4 GB RAM</li>
+                        <li>50 GB NVMe Disk</li>
+                        <li>4 TB Bandwidth</li>
+                    </ul>
+                </div>
+
+                <div class="pricing-card dark-card highlight">
+                    <div class="popular-label">คุ้มค่าที่สุด</div>
+                    <div class="plan-name">KVM 2</div>
+                    <div class="price-area">
+                        <div class="price-old">฿559.00</div>
+                        <div class="price-new">฿199.00<span class="price-unit">/ด</span></div>
+                    </div>
+                    <a href="https://www.hostinger.com/th/referral?REFERRALCODE=tuikub" class="card-btn">เลือก KVM 2</a>
+                    <ul class="features">
+                        <li>2 vCPU Cores</li>
+                        <li>8 GB RAM</li>
+                        <li>100 GB NVMe Disk</li>
+                        <li>8 TB Bandwidth</li>
+                    </ul>
+                </div>
+
+                <div class="pricing-card dark-card">
+                    <div class="plan-name">KVM 4</div>
+                    <div class="price-area">
+                        <div class="price-old">฿909.00</div>
+                        <div class="price-new">฿259.00<span class="price-unit">/ด</span></div>
+                    </div>
+                    <a href="https://www.hostinger.com/th/referral?REFERRALCODE=tuikub" class="card-btn">เลือก KVM 4</a>
+                    <ul class="features">
+                        <li>4 vCPU Cores</li>
+                        <li>16 GB RAM</li>
+                        <li>200 GB NVMe Disk</li>
+                        <li>16 TB Bandwidth</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. n8n Hosting -->
+    <section id="n8n" class="section-padding dark-section" style="background:#161622;">
+        <div class="container">
+            <h2 class="section-title">n8n VPS Hosting</h2>
+            <p class="section-desc">รัน Workflow Automation ได้ไม่จำกัด บนเซิร์ฟเวอร์ส่วนตัวของคุณเอง</p>
+            
+            <div class="pricing-grid">
+                <!-- Duplicate structure for n8n specific marketing -->
+                <div class="pricing-card dark-card">
+                    <div class="plan-name">n8n Starter</div>
+                    <div class="price-area">
+                        <div class="price-new">฿149.00<span class="price-unit">/ด</span></div>
+                    </div>
+                    <a href="https://www.hostinger.com/th/referral?REFERRALCODE=tuikub" class="card-btn">เริ่มใช้ n8n</a>
+                    <ul class="features">
+                        <li>ติดตั้ง n8n อัตโนมัติ</li>
+                        <li>1 vCPU / 4 GB RAM</li>
+                        <li>เหมาะสำหรับ 10-50 Workflows</li>
+                    </ul>
+                </div>
+                <div class="pricing-card dark-card highlight">
+                    <div class="popular-label">แนะนำสำหรับ AI</div>
+                    <div class="plan-name">n8n Pro</div>
+                    <div class="price-area">
+                        <div class="price-new">฿199.00<span class="price-unit">/ด</span></div>
+                    </div>
+                    <a href="https://www.hostinger.com/th/referral?REFERRALCODE=tuikub" class="card-btn">เริ่มใช้ n8n</a>
+                    <ul class="features">
+                        <li>ติดตั้ง n8n อัตโนมัติ</li>
+                        <li>2 vCPU / 8 GB RAM</li>
+                        <li>รองรับ Heavy AI Tasks</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Horizons -->
+    <section id="horizons" class="section-padding" style="background: linear-gradient(135deg, #2F2F4F 0%, #1C1C28 100%); color:white;">
+        <div class="container text-center">
+            <div style="background:rgba(255,255,255,0.1); display:inline-block; padding:5px 15px; border-radius:20px; margin-bottom:20px;">AI Application Builder</div>
+            <h2 class="section-title" style="color:white;">Hostinger Horizons</h2>
+            <p class="section-desc" style="color:#ddd;">สร้าง Web Apps โดยไม่ต้องเขียนโค้ด ด้วยพลังของ AI เต็มรูปแบบ</p>
+            
+            <div class="pricing-card" style="max-width: 400px; margin: 0 auto; color: #333;">
+                <div class="plan-name">Explorer Plan</div>
+                <div class="price-area">
+                    <div class="price-old">฿329.00</div>
+                    <div class="price-new" style="color:var(--primary);">฿229.00<span class="price-unit">/ด</span></div>
+                    <div class="free-bonus">+2 เดือน ฟรี</div>
+                </div>
+                <a href="https://www.hostinger.com/th/referral?REFERRALCODE=tuikub" class="btn btn-primary" style="width:100%;">เริ่มสร้าง App</a>
+                <ul class="features" style="text-align:left; margin-top:20px;">
+                    <li>30 AI Credits / เดือน</li>
+                    <li>สร้าง 1 เว็บแอปพลิเคชัน</li>
+                    <li>SEO Optimized Projects</li>
+                    <li>ระบบสมาชิก (User Login/Storage)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6 & 7. Email & Marketing -->
+    <section id="email" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Email Solutions</h2>
+            <div class="pricing-grid">
+                <!-- Email Hosting -->
+                <div class="pricing-card">
+                    <div class="plan-name">Business Email</div>
+                    <div class="plan-sub">อีเมลบริษัทน่าเชื่อถือ (Titan)</div>
+                    <div class="price-area">
+                        <div class="price-new">฿29.00<span class="price-unit">/ด</span></div>
+                    </div>
+                    <a href="https://www.hostinger.com/th/referral?REFERRALCODE=tuikub" class="card-btn">สร้างอีเมล</a>
+                    <ul class="features">
+                        <li>10 GB Storage</li>
+                        <li>ระบบป้องกัน Spam/Virus</li>
+                        <li>นำเข้าอีเมลจากที่เก่าได้</li>
+                    </ul>
+                </div>
+
+                <!-- Email Marketing -->
+                <div class="pricing-card" style="background:#fdfdff; border-color:#e0e0ff;">
+                    <div class="plan-name">Email Marketing</div>
+                    <div class="plan-sub">Hostinger Reach</div>
+                    <div class="price-area">
+                        <div class="price-new">฿59.00<span class="price-unit">/ด</span></div>
+                    </div>
+                    <a href="https://www.hostinger.com/th/referral?REFERRALCODE=tuikub" class="card-btn">เริ่มทำการตลาด</a>
+                    <ul class="features">
+                        <li>ส่งอีเมลหาลูกค้า</li>
+                        <li>AI ช่วยเขียนและออกแบบ</li>
+                        <li>Analytics วิเคราะห์ผลลัพธ์</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Domains -->
+    <section id="domain" class="section-padding" style="background: linear-gradient(135deg, #744AF4, #673DE6); color:white;">
+        <div class="container">
+            <h2 class="section-title" style="color:white;">ค้นหาโดเมนที่ใช่</h2>
+            <p class="section-desc" style="color:#eee;">เริ่มต้นสร้างแบรนด์ของคุณวันนี้ ราคาเริ่มต้นเพียงหลักร้อย</p>
+            
+            <div style="background:white; padding:10px; border-radius:50px; display:flex; max-width:600px; margin:0 auto 30px;">
+                <input type="text" placeholder="พิมพ์ชื่อโดเมนที่คุณต้องการ..." style="flex:1; border:none; padding:10px 20px; font-size:1.1rem; outline:none; border-radius:50px;">
+                <a href="https://www.hostinger.com/th/referral?REFERRALCODE=tuikub" class="btn btn-primary" style="border-radius:40px; padding:10px 30px; background:black;">ค้นหา</a>
+            </div>
+
+            <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap;">
+                <div style="background:rgba(255,255,255,0.1); padding:10px 20px; border-radius:10px;">.com ฿199</div>
+                <div style="background:rgba(255,255,255,0.1); padding:10px 20px; border-radius:10px;">.in.th ฿299</div>
+                <div style="background:rgba(255,255,255,0.1); padding:10px 20px; border-radius:10px;">.online ฿39</div>
+                <div style="background:rgba(255,255,255,0.1); padding:10px 20px; border-radius:10px;">.net ฿499</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PDPA Banner -->
+    <div class="pdpa-banner" id="pdpaBanner">
+        <div style="flex:1;">
+            เว็บไซต์นี้ใช้คุกกี้เพื่อมอบประสบการณ์การใช้งานที่ดีที่สุดให้กับคุณ รวมถึงเพื่อปรับแต่งเนื้อหาและโฆษณา การใช้งานเว็บไซต์แสดงว่าคุณยอมรับนโยบายความเป็นส่วนตัวของเรา
+        </div>
+        <button class="pdpa-btn" onclick="document.getElementById('pdpaBanner').style.display='none'">ยอมรับทั้งหมด</button>
+    </div>
+
+    <!-- AI Chat -->
+    <div class="ai-chat-btn" onclick="toggleChat()">
+        <svg viewBox="0 0 24 24" width="30" height="30" fill="white"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/></svg>
+    </div>
+
+    <div class="ai-modal" id="aiChatModal">
+        <div class="ai-header">
+            <span>Kodee AI</span>
+            <span style="cursor:pointer" onclick="toggleChat()">✕</span>
+        </div>
+        <div class="ai-body">
+            <div style="background:linear-gradient(135deg, #744AF4, #673DE6); width:50px; height:50px; border-radius:12px; margin:0 auto 15px; display:flex; align-items:center; justify-content:center;">
+                <svg viewBox="0 0 24 24" width="30" fill="white"><path d="M12 2L2 12l10 10 10-10L12 2zm0 18l-8-8 8-8 8 8-8 8z"/></svg>
+            </div>
+            <h3 style="margin-bottom:20px;">สวัสดี 👋<br>ให้ช่วยเลือกแพ็กเกจไหมครับ?</h3>
+            <a href="https://www.hostinger.com/th/referral?REFERRALCODE=tuikub" class="ai-option">↗ แนะนำโฮสติ้งสำหรับมือใหม่</a>
+            <a href="https://www.hostinger.com/th/referral?REFERRALCODE=tuikub" class="ai-option">↗ เปรียบเทียบ VPS vs Cloud</a>
+            <a href="https://www.hostinger.com/th/referral?REFERRALCODE=tuikub" class="ai-option">↗ วิธีย้ายเว็บไซต์มา Hostinger</a>
+        </div>
+    </div>
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 แนะนำโฮสติ้งโดย Tuikub. All rights reserved.</p>
-            <br>
-            <p style="opacity: 0.7; font-size: 0.8rem; max-width: 800px; margin: 0 auto;">
-                <strong>Disclosure:</strong> เว็บไซต์นี้เป็นพันธมิตรกับ Hostinger เนื้อหาในหน้านี้เป็นเพียงคำแนะนำส่วนบุคคล หากคุณสมัครผ่านลิงก์ของเรา เราอาจได้รับค่าคอมมิชชั่นโดยที่คุณไม่ต้องจ่ายเพิ่ม ขอบคุณที่สนับสนุนครับ
-            </p>
+            <p>&copy; 2026 Hostinger Promo by Tuikub. All rights reserved.</p>
+            <p style="font-size:0.8rem; opacity:0.7; margin-top:10px;">Disclosure: ลิงก์ในหน้านี้เป็น Affiliate Links หากคุณสมัครใช้งาน เราอาจได้รับค่าตอบแทนโดยที่คุณไม่ต้องจ่ายเพิ่ม</p>
         </div>
     </footer>
+
+    <script>
+        function toggleChat() {
+            const modal = document.getElementById('aiChatModal');
+            modal.style.display = modal.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
 
 </body>
 </html>
