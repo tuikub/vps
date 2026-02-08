@@ -4,9 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BizBox - โซลูชั่นคลาวด์สำหรับธุรกิจของคุณ</title>
+    <meta name="description" content="BizBox - โซลูชั่นคลาวด์สำหรับธุรกิจของคุณ ให้บริการ Web Hosting, VPS Forex, VPS Linux, Email Lite และ VPS-WinStart">
+    <meta name="keywords" content="web hosting, vps, vps forex, vps linux, email hosting, โฮสติ้ง, vps, อีเมลโฮสติ้ง">
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
         :root {
             --primary-color: #0066cc;
@@ -16,15 +20,39 @@
             --accent-color: #ff9800;
         }
         
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
             font-family: 'Sarabun', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: #333;
+            line-height: 1.6;
         }
         
+        /* Loading Animation */
+        #page-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+        
+        /* Navigation */
         .navbar {
             background-color: white;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             padding: 15px 0;
+            transition: all 0.3s ease;
         }
         
         .navbar-brand {
@@ -43,6 +71,7 @@
             color: var(--secondary-color) !important;
         }
         
+        /* Hero Section */
         .hero-section {
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
@@ -69,14 +98,28 @@
             font-size: 3rem;
             font-weight: bold;
             margin-bottom: 20px;
+            animation: fadeInUp 0.8s ease;
         }
         
         .hero-subtitle {
             font-size: 1.2rem;
             margin-bottom: 30px;
             max-width: 700px;
+            animation: fadeInUp 0.8s ease 0.2s both;
         }
         
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Buttons */
         .btn-primary-custom {
             background-color: var(--accent-color);
             border: none;
@@ -84,12 +127,15 @@
             font-weight: 600;
             border-radius: 50px;
             transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
         }
         
         .btn-primary-custom:hover {
             background-color: #e68900;
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            color: white;
         }
         
         .btn-outline-custom {
@@ -99,6 +145,8 @@
             font-weight: 600;
             border-radius: 50px;
             transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
         }
         
         .btn-outline-custom:hover {
@@ -106,6 +154,7 @@
             color: var(--primary-color);
         }
         
+        /* Section Styles */
         .section-title {
             font-size: 2.5rem;
             font-weight: bold;
@@ -125,6 +174,7 @@
             background-color: var(--secondary-color);
         }
         
+        /* Service Cards */
         .service-card {
             border: none;
             border-radius: 10px;
@@ -132,16 +182,18 @@
             transition: all 0.3s;
             height: 100%;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .service-card.animate-in {
+            opacity: 1;
+            transform: translateY(0);
         }
         
         .service-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        }
-        
-        .service-card .card-img-top {
-            height: 200px;
-            object-fit: cover;
         }
         
         .service-icon {
@@ -150,6 +202,7 @@
             margin-bottom: 20px;
         }
         
+        /* Pricing Cards */
         .pricing-card {
             border: none;
             border-radius: 10px;
@@ -158,6 +211,13 @@
             height: 100%;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             position: relative;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .pricing-card.animate-in {
+            opacity: 1;
+            transform: translateY(0);
         }
         
         .pricing-card.featured {
@@ -176,6 +236,7 @@
             transform: rotate(45deg);
             font-weight: bold;
             font-size: 0.8rem;
+            z-index: 1;
         }
         
         .pricing-card:hover {
@@ -198,6 +259,7 @@
             color: #777;
         }
         
+        /* Feature List */
         .feature-list {
             list-style: none;
             padding: 0;
@@ -206,13 +268,44 @@
         .feature-list li {
             padding: 8px 0;
             border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: flex-start;
         }
         
         .feature-list li i {
             color: var(--secondary-color);
             margin-right: 10px;
+            margin-top: 2px;
         }
         
+        /* Tabs */
+        .nav-tabs {
+            border-bottom: none;
+            margin-bottom: 30px;
+        }
+        
+        .nav-tabs .nav-link {
+            border: none;
+            border-bottom: 3px solid transparent;
+            color: #777;
+            font-weight: 600;
+            margin-right: 15px;
+            padding: 10px 15px;
+            transition: all 0.3s;
+        }
+        
+        .nav-tabs .nav-link:hover {
+            border-bottom-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+        
+        .nav-tabs .nav-link.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+            background-color: transparent;
+        }
+        
+        /* Footer */
         .footer {
             background-color: var(--dark-color);
             color: white;
@@ -246,6 +339,7 @@
             line-height: 40px;
             margin-right: 10px;
             transition: all 0.3s;
+            color: white;
         }
         
         .social-icons a:hover {
@@ -253,79 +347,22 @@
             transform: translateY(-3px);
         }
         
-        .contact-info {
-            margin-top: 30px;
-        }
-        
-        .contact-info p {
-            margin-bottom: 10px;
-        }
-        
-        .contact-info i {
-            margin-right: 10px;
-            color: var(--secondary-color);
-        }
-        
-        .modal-content {
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        
-        .modal-header {
-            background-color: var(--primary-color);
-            color: white;
-        }
-        
-        .form-control, .form-select {
-            border-radius: 8px;
-            border: 1px solid #ddd;
-            padding: 12px;
-        }
-        
-        .form-control:focus, .form-select:focus {
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 0.25rem rgba(0, 102, 204, 0.25);
-        }
-        
-        .tab-content {
-            padding: 30px 0;
-        }
-        
-        .nav-tabs .nav-link {
-            border: none;
-            border-bottom: 3px solid transparent;
-            color: #777;
-            font-weight: 600;
-            margin-right: 15px;
-        }
-        
-        .nav-tabs .nav-link.active {
-            color: var(--primary-color);
-            border-bottom-color: var(--primary-color);
-            background-color: transparent;
-        }
-        
-        .testimonial-card {
-            background-color: white;
+        /* Contact Section */
+        .contact-card {
+            background: white;
             border-radius: 10px;
             padding: 30px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            margin-bottom: 30px;
-        }
-        
-        .testimonial-card img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            object-fit: cover;
             margin-bottom: 20px;
+            transition: all 0.3s;
         }
         
-        .stars {
-            color: var(--accent-color);
-            margin-bottom: 15px;
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
         
+        /* Cookie Banner */
         .cookie-banner {
             position: fixed;
             bottom: 0;
@@ -342,6 +379,30 @@
             display: block;
         }
         
+        /* Modal */
+        .modal-content {
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .modal-header {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        /* Form Styles */
+        .form-control, .form-select {
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            padding: 12px;
+        }
+        
+        .form-control:focus, .form-select:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.25rem rgba(0, 102, 204, 0.25);
+        }
+        
+        /* Responsive */
         @media (max-width: 768px) {
             .hero-title {
                 font-size: 2rem;
@@ -354,15 +415,38 @@
             .pricing-card.featured {
                 transform: scale(1);
             }
+            
+            .nav-tabs .nav-link {
+                font-size: 0.9rem;
+                padding: 8px 10px;
+                margin-right: 5px;
+            }
+        }
+        
+        /* Animations */
+        .fade-in {
+            animation: fadeIn 0.8s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
     </style>
 </head>
 <body>
-    <!-- 导航栏 -->
+    <!-- Page Loader -->
+    <div id="page-loader">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+
+    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="#"><i class="bi bi-box-fill"></i> BizBox</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <a class="navbar-brand" href="#home"><i class="bi bi-box-fill"></i> BizBox</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -372,9 +456,6 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#services">บริการของเรา</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#pricing">แพ็คเกจ</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">ติดต่อเรา</a>
@@ -390,19 +471,19 @@
         </div>
     </nav>
 
-    <!-- 主页横幅 -->
+    <!-- Hero Section -->
     <section id="home" class="hero-section">
         <div class="container text-center">
             <h1 class="hero-title">เลือกแพ็คเกจที่เหมาะกับคุณ BizBox</h1>
             <p class="hero-subtitle mx-auto">เรามีโซลูชั่นที่ครอบคลุมทุกความต้องการ ตั้งแต่เว็บไซต์เริ่มต้น ไปจนถึงระบบเทรดระดับองค์กร</p>
             <div class="d-flex justify-content-center gap-3 flex-wrap">
-                <a href="#pricing" class="btn btn-primary-custom">ดูแพ็คเกจ</a>
+                <a href="#services" class="btn btn-primary-custom">ดูแพ็คเกจ</a>
                 <a href="#contact" class="btn btn-outline-custom">ติดต่อเรา</a>
             </div>
         </div>
     </section>
 
-    <!-- 服务介绍 -->
+    <!-- Services Section -->
     <section id="services" class="py-5">
         <div class="container">
             <div class="text-center mb-5">
@@ -412,23 +493,24 @@
             
             <ul class="nav nav-tabs justify-content-center mb-4" id="serviceTabs" role="tablist">
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="webhosting-tab" data-bs-toggle="tab" data-bs-target="#webhosting" type="button" role="tab">🌐 Web Hosting</button>
+                    <button class="nav-link active" id="webhosting-tab" data-bs-toggle="tab" data-bs-target="#webhosting" type="button" role="tab" aria-controls="webhosting" aria-selected="true">🌐 Web Hosting</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="vpsforex-tab" data-bs-toggle="tab" data-bs-target="#vpsforex" type="button" role="tab">📈 VPS Forex</button>
+                    <button class="nav-link" id="vpsforex-tab" data-bs-toggle="tab" data-bs-target="#vpsforex" type="button" role="tab" aria-controls="vpsforex" aria-selected="false">📈 VPS Forex</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="vpslinux-tab" data-bs-toggle="tab" data-bs-target="#vpslinux" type="button" role="tab">🐧 VPS Linux</button>
+                    <button class="nav-link" id="vpslinux-tab" data-bs-toggle="tab" data-bs-target="#vpslinux" type="button" role="tab" aria-controls="vpslinux" aria-selected="false">🐧 VPS Linux</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="email-tab" data-bs-toggle="tab" data-bs-target="#email" type="button" role="tab">📧 Email Lite</button>
+                    <button class="nav-link" id="email-tab" data-bs-toggle="tab" data-bs-target="#email" type="button" role="tab" aria-controls="email" aria-selected="false">📧 Email Lite</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="vpswin-tab" data-bs-toggle="tab" data-bs-target="#vpswin" type="button" role="tab">🖥️ VPS-WinStart</button>
+                    <button class="nav-link" id="vpswin-tab" data-bs-toggle="tab" data-bs-target="#vpswin" type="button" role="tab" aria-controls="vpswin" aria-selected="false">🖥️ VPS-WinStart</button>
                 </li>
             </ul>
             
             <div class="tab-content" id="serviceTabsContent">
+                <!-- Web Hosting Tab -->
                 <div class="tab-pane fade show active" id="webhosting" role="tabpanel">
                     <div class="row g-4">
                         <div class="col-md-6 col-lg-3">
@@ -438,15 +520,15 @@
                                         <i class="bi bi-hdd-stack"></i>
                                     </div>
                                     <h5 class="card-title">Biz Starter</h5>
-                                    <p class="card-text">เหมาะสำหรับเว็บไซต์ส่วนตัวหรือธุรกิจเล็ก</p>
-                                    <ul class="feature-list text-start">
-                                        <li><i class="bi bi-check-circle-fill"></i> NVMe SSD 10 GB</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> โดเมน 1</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> บัญชีอีเมล 5</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> Free SSL</li>
-                                    </ul>
                                     <div class="price">฿1,500<span class="price-unit">/ปี</span></div>
-                                    <a href="https://client.bizbox.in.th/?cmd=cart&action=add&id=124" class="btn btn-primary-custom w-100 mt-3" target="_blank">อัพเกรด</a>
+                                    <ul class="feature-list text-start mt-3">
+                                        <li><i class="bi bi-check-circle-fill"></i> NVMe SSD 15 GB</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> 5 Domains</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> 100 Email Accounts</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> Free SSL (Let's Encrypt)</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> Control Panel</li>
+                                    </ul>
+                                    <a href="https://client.bizbox.in.th/?cmd=cart&action=add&id=124" class="btn btn-primary-custom w-100 mt-3" target="_blank">สมัครแพ็คเกจนี้</a>
                                 </div>
                             </div>
                         </div>
@@ -457,15 +539,15 @@
                                         <i class="bi bi-hdd-stack"></i>
                                     </div>
                                     <h5 class="card-title">Biz Growth</h5>
-                                    <p class="card-text">เหมาะสำหรับธุรกิจขนาดกลาง</p>
-                                    <ul class="feature-list text-start">
-                                        <li><i class="bi bi-check-circle-fill"></i> NVMe SSD 20 GB</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> โดเมน 3</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> บัญชีอีเมล 15</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> Free SSL</li>
-                                    </ul>
                                     <div class="price">฿2,000<span class="price-unit">/ปี</span></div>
-                                    <a href="https://client.bizbox.in.th/?cmd=cart&action=add&id=125" class="btn btn-primary-custom w-100 mt-3" target="_blank">อัพเกรด</a>
+                                    <ul class="feature-list text-start mt-3">
+                                        <li><i class="bi bi-check-circle-fill"></i> NVMe SSD 20 GB</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> 5 Domains</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> 100 Email Accounts</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> Free SSL (Let's Encrypt)</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> Control Panel</li>
+                                    </ul>
+                                    <a href="https://client.bizbox.in.th/?cmd=cart&action=add&id=125" class="btn btn-primary-custom w-100 mt-3" target="_blank">สมัครแพ็คเกจนี้</a>
                                 </div>
                             </div>
                         </div>
@@ -476,15 +558,15 @@
                                         <i class="bi bi-hdd-stack"></i>
                                     </div>
                                     <h5 class="card-title">Biz Pro</h5>
-                                    <p class="card-text">เหมาะสำหรับเว็บไซต์ที่มีผู้เข้าชมสูง</p>
-                                    <ul class="feature-list text-start">
-                                        <li><i class="bi bi-check-circle-fill"></i> NVMe SSD 40 GB</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> โดเมน 5</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> บัญชีอีเมล 30</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> Free SSL</li>
-                                    </ul>
                                     <div class="price">฿2,500<span class="price-unit">/ปี</span></div>
-                                    <a href="https://client.bizbox.in.th/?cmd=cart&action=add&id=126" class="btn btn-primary-custom w-100 mt-3" target="_blank">อัพเกรด</a>
+                                    <ul class="feature-list text-start mt-3">
+                                        <li><i class="bi bi-check-circle-fill"></i> NVMe SSD 25 GB</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> 10 Domains</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> 250 Email Accounts</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> Free SSL (Let's Encrypt)</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> Control Panel</li>
+                                    </ul>
+                                    <a href="https://client.bizbox.in.th/?cmd=cart&action=add&id=126" class="btn btn-primary-custom w-100 mt-3" target="_blank">สมัครแพ็คเกจนี้</a>
                                 </div>
                             </div>
                         </div>
@@ -495,21 +577,22 @@
                                         <i class="bi bi-hdd-stack"></i>
                                     </div>
                                     <h5 class="card-title">Biz Enterprise</h5>
-                                    <p class="card-text">โซลูชั่นสำหรับองค์กรขนาดใหญ่</p>
-                                    <ul class="feature-list text-start">
-                                        <li><i class="bi bi-check-circle-fill"></i> NVMe SSD 80 GB</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> โดเมน 10</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> บัญชีอีเมล ไม่จำกัด</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> Free SSL</li>
-                                    </ul>
                                     <div class="price">฿3,000<span class="price-unit">/ปี</span></div>
-                                    <a href="https://client.bizbox.in.th/?cmd=cart&action=add&id=127" class="btn btn-primary-custom w-100 mt-3" target="_blank">อัพเกรด</a>
+                                    <ul class="feature-list text-start mt-3">
+                                        <li><i class="bi bi-check-circle-fill"></i> NVMe SSD 30 GB</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> 10 Domains</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> 150 Email Accounts</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> Free SSL (Let's Encrypt)</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> Control Panel</li>
+                                    </ul>
+                                    <a href="https://client.bizbox.in.th/?cmd=cart&action=add&id=127" class="btn btn-primary-custom w-100 mt-3" target="_blank">สมัครแพ็คเกจนี้</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 
+                <!-- VPS Forex Tab -->
                 <div class="tab-pane fade" id="vpsforex" role="tabpanel">
                     <div class="row g-4">
                         <div class="col-md-6 col-lg-3">
@@ -518,16 +601,16 @@
                                     <div class="service-icon">
                                         <i class="bi bi-graph-up-arrow"></i>
                                     </div>
-                                    <h5 class="card-title">StarterTrade</h5>
-                                    <p class="card-text">สำหรับเทรดเดอร์มือใหม่</p>
-                                    <ul class="feature-list text-start">
-                                        <li><i class="bi bi-check-circle-fill"></i> CPU 1 vCore</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> RAM 1 GB</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> NVMe SSD 20 GB</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> แบนด์วิดท์ ไม่จำกัด</li>
-                                    </ul>
+                                    <h5 class="card-title">HOSFOREX<br>StarterTrade</h5>
                                     <div class="price">฿199<span class="price-unit">/เดือน</span></div>
-                                    <a href="https://client.bizbox.in.th/?cmd=cart&action=add&id=151" class="btn btn-primary-custom w-100 mt-3" target="_blank">ออกจำหน่าย</a>
+                                    <ul class="feature-list text-start mt-3">
+                                        <li><i class="bi bi-check-circle-fill"></i> 2 vCore Processor</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> 4 GB Memory</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> 50 GB NVMe SSD</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> 1 GB Share Bandwidth</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> Unlimited Data Transfer</li>
+                                    </ul>
+                                    <a href="https://client.bizbox.in.th/?cmd=cart&action=add&id=151" class="btn btn-primary-custom w-100 mt-3" target="_blank">สมัครแพ็คเกจนี้</a>
                                 </div>
                             </div>
                         </div>
@@ -537,16 +620,16 @@
                                     <div class="service-icon">
                                         <i class="bi bi-graph-up-arrow"></i>
                                     </div>
-                                    <h5 class="card-title">ScalperPro</h5>
-                                    <p class="card-text">สำหรับเทรดเดอร์มืออาชีพ</p>
-                                    <ul class="feature-list text-start">
-                                        <li><i class="bi bi-check-circle-fill"></i> CPU 2 vCores</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> RAM 2 GB</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> NVMe SSD 40 GB</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> แบนด์วิดท์ ไม่จำกัด</li>
-                                    </ul>
+                                    <h5 class="card-title">FOREX<br>ScalperPro</h5>
                                     <div class="price">฿399<span class="price-unit">/เดือน</span></div>
-                                    <a href="https://client.bizbox.in.th/?cmd=cart&action=add&id=152" class="btn btn-primary-custom w-100 mt-3" target="_blank">ออกจำหน่าย</a>
+                                    <ul class="feature-list text-start mt-3">
+                                        <li><i class="bi bi-check-circle-fill"></i> 4 vCore Processor</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> 4 GB Memory</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> 50 GB NVMe SSD</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> 1 GB Share Bandwidth</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> Unlimited Data Transfer</li>
+                                    </ul>
+                                    <a href="https://client.bizbox.in.th/?cmd=cart&action=add&id=152" class="btn btn-primary-custom w-100 mt-3" target="_blank">สมัครแพ็คเกจนี้</a>
                                 </div>
                             </div>
                         </div>
@@ -556,16 +639,16 @@
                                     <div class="service-icon">
                                         <i class="bi bi-graph-up-arrow"></i>
                                     </div>
-                                    <h5 class="card-title">EA Master</h5>
-                                    <p class="card-text">สำหรับเทรดเดอร์ที่ต้องการประสิทธิภาพสูง</p>
-                                    <ul class="feature-list text-start">
-                                        <li><i class="bi bi-check-circle-fill"></i> CPU 3 vCores</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> RAM 4 GB</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> NVMe SSD 60 GB</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> แบนด์วิดท์ ไม่จำกัด</li>
-                                    </ul>
+                                    <h5 class="card-title">FOREX<br>EA Master</h5>
                                     <div class="price">฿699<span class="price-unit">/เดือน</span></div>
-                                    <a href="https://client.bizbox.in.th/?cmd=cart&action=add&id=153" class="btn btn-primary-custom w-100 mt-3" target="_blank">ออกจำหน่าย</a>
+                                    <ul class="feature-list text-start mt-3">
+                                        <li><i class="bi bi-check-circle-fill"></i> 6 vCore Processor</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> 6 GB Memory</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> 50 GB NVMe SSD</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> 1 GB Share Bandwidth</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> Unlimited Data Transfer</li>
+                                    </ul>
+                                    <a href="https://client.bizbox.in.th/?cmd=cart&action=add&id=153" class="btn btn-primary-custom w-100 mt-3" target="_blank">สมัครแพ็คเกจนี้</a>
                                 </div>
                             </div>
                         </div>
@@ -575,22 +658,23 @@
                                     <div class="service-icon">
                                         <i class="bi bi-graph-up-arrow"></i>
                                     </div>
-                                    <h5 class="card-title">Institutional</h5>
-                                    <p class="card-text">โซลูชั่นสำหรับสถาบันการเงิน</p>
-                                    <ul class="feature-list text-start">
-                                        <li><i class="bi bi-check-circle-fill"></i> CPU 4 vCores</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> RAM 8 GB</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> NVMe SSD 80 GB</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> แบนด์วิดท์ ไม่จำกัด</li>
-                                    </ul>
+                                    <h5 class="card-title">FOREX<br>Institutional</h5>
                                     <div class="price">฿899<span class="price-unit">/เดือน</span></div>
-                                    <a href="https://client.bizbox.in.th/?cmd=cart&action=add&id=154" class="btn btn-primary-custom w-100 mt-3" target="_blank">ออกจำหน่าย</a>
+                                    <ul class="feature-list text-start mt-3">
+                                        <li><i class="bi bi-check-circle-fill"></i> 8 vCore Processor</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> 8 GB Memory</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> 50 GB NVMe SSD</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> 1 GB Share Bandwidth</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> Unlimited Data Transfer</li>
+                                    </ul>
+                                    <a href="https://client.bizbox.in.th/?cmd=cart&action=add&id=154" class="btn btn-primary-custom w-100 mt-3" target="_blank">สมัครแพ็คเกจนี้</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 
+                <!-- VPS Linux Tab -->
                 <div class="tab-pane fade" id="vpslinux" role="tabpanel">
                     <div class="row g-4">
                         <div class="col-md-6 col-lg-3">
@@ -599,16 +683,17 @@
                                     <div class="service-icon">
                                         <i class="bi bi-ubuntu"></i>
                                     </div>
-                                    <h5 class="card-title">VPS - Linux</h5>
-                                    <p class="card-text">เหมาะสำหรับโปรเจกต์เล็ก</p>
-                                    <ul class="feature-list text-start">
-                                        <li><i class="bi bi-check-circle-fill"></i> CPU 1 vCore</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> RAM 1 GB</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> NVMe SSD 25 GB</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> แบนด์วิดท์ ไม่จำกัด</li>
-                                    </ul>
+                                    <h5 class="card-title">VPS-Linux</h5>
                                     <div class="price">฿290<span class="price-unit">/เดือน</span></div>
-                                    <a href="https://client.bizbox.in.th/?cmd=cart&action=add&id=140" class="btn btn-primary-custom w-100 mt-3" target="_blank">ออกจำหน่าย</a>
+                                    <ul class="feature-list text-start mt-3">
+                                        <li><i class="bi bi-check-circle-fill"></i> 1 vCore Processor</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> 2 GB Memory</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> 20 GB NVMe SSD</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> 1 GB Share Bandwidth</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> Unlimited Data Transfer</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> 1 Public IP</li>
+                                    </ul>
+                                    <a href="https://client.bizbox.in.th/?cmd=cart&action=add&id=140" class="btn btn-primary-custom w-100 mt-3" target="_blank">สมัครแพ็คเกจนี้</a>
                                 </div>
                             </div>
                         </div>
@@ -618,16 +703,17 @@
                                     <div class="service-icon">
                                         <i class="bi bi-ubuntu"></i>
                                     </div>
-                                    <h5 class="card-title">VPS - Dev Sandbox</h5>
-                                    <p class="card-text">เหมาะสำหรับนักพัฒนา</p>
-                                    <ul class="feature-list text-start">
-                                        <li><i class="bi bi-check-circle-fill"></i> CPU 2 vCores</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> RAM 2 GB</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> NVMe SSD 50 GB</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> แบนด์วิดท์ ไม่จำกัด</li>
-                                    </ul>
+                                    <h5 class="card-title">VPS-DevSandbox</h5>
                                     <div class="price">฿590<span class="price-unit">/เดือน</span></div>
-                                    <a href="https://client.bizbox.in.th/?cmd=cart&action=add&id=141" class="btn btn-primary-custom w-100 mt-3" target="_blank">ออกจำหน่าย</a>
+                                    <ul class="feature-list text-start mt-3">
+                                        <li><i class="bi bi-check-circle-fill"></i> 2 vCore Processor</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> 4 GB Memory</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> 40 GB NVMe SSD</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> 1 GB Share Bandwidth</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> Unlimited Data Transfer</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> 1 Public IP</li>
+                                    </ul>
+                                    <a href="https://client.bizbox.in.th/?cmd=cart&action=add&id=141" class="btn btn-primary-custom w-100 mt-3" target="_blank">สมัครแพ็คเกจนี้</a>
                                 </div>
                             </div>
                         </div>
@@ -637,16 +723,17 @@
                                     <div class="service-icon">
                                         <i class="bi bi-ubuntu"></i>
                                     </div>
-                                    <h5 class="card-title">VPS - ScaleUP</h5>
-                                    <p class="card-text">เหมาะสำหรับแอปพลิเคชันขนาดใหญ่</p>
-                                    <ul class="feature-list text-start">
-                                        <li><i class="bi bi-check-circle-fill"></i> CPU 4 vCores</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> RAM 4 GB</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> NVMe SSD 100 GB</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> แบนด์วิดท์ ไม่จำกัด</li>
-                                    </ul>
+                                    <h5 class="card-title">VPS-ScaleUP</h5>
                                     <div class="price">฿2,390<span class="price-unit">/เดือน</span></div>
-                                    <a href="https://client.bizbox.in.th/?cmd=cart&action=add&id=143" class="btn btn-primary-custom w-100 mt-3" target="_blank">ออกจำหน่าย</a>
+                                    <ul class="feature-list text-start mt-3">
+                                        <li><i class="bi bi-check-circle-fill"></i> 8 vCore Processor</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> 16 GB Memory</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> 160 GB NVMe SSD</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> 1 GB Share Bandwidth</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> Unlimited Data Transfer</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> 1 Public IP</li>
+                                    </ul>
+                                    <a href="https://client.bizbox.in.th/?cmd=cart&action=add&id=143" class="btn btn-primary-custom w-100 mt-3" target="_blank">สมัครแพ็คเกจนี้</a>
                                 </div>
                             </div>
                         </div>
@@ -656,22 +743,24 @@
                                     <div class="service-icon">
                                         <i class="bi bi-ubuntu"></i>
                                     </div>
-                                    <h5 class="card-title">VPS - Production</h5>
-                                    <p class="card-text">โซลูชั่นสำหรับองค์กร</p>
-                                    <ul class="feature-list text-start">
-                                        <li><i class="bi bi-check-circle-fill"></i> CPU 6 vCores</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> RAM 8 GB</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> NVMe SSD 200 GB</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> แบนด์วิดท์ ไม่จำกัด</li>
-                                    </ul>
+                                    <h5 class="card-title">VPS-Production</h5>
                                     <div class="price">฿4,790<span class="price-unit">/เดือน</span></div>
-                                    <a href="https://client.bizbox.in.th/?cmd=cart&action=add&id=144" class="btn btn-primary-custom w-100 mt-3" target="_blank">ออกจำหน่าย</a>
+                                    <ul class="feature-list text-start mt-3">
+                                        <li><i class="bi bi-check-circle-fill"></i> 16 vCore Processor</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> 32 GB Memory</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> 320 GB NVMe SSD</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> 1 GB Share Bandwidth</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> Unlimited Data Transfer</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> 1 Public IP</li>
+                                    </ul>
+                                    <a href="https://client.bizbox.in.th/?cmd=cart&action=add&id=144" class="btn btn-primary-custom w-100 mt-3" target="_blank">สมัครแพ็คเกจนี้</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 
+                <!-- Email Tab -->
                 <div class="tab-pane fade" id="email" role="tabpanel">
                     <div class="row g-4">
                         <div class="col-md-6 col-lg-3">
@@ -681,15 +770,17 @@
                                         <i class="bi bi-envelope"></i>
                                     </div>
                                     <h5 class="card-title">Email Lite</h5>
-                                    <p class="card-text">สำหรับผู้ใช้งานเล็กน้อย</p>
-                                    <ul class="feature-list text-start">
-                                        <li><i class="bi bi-check-circle-fill"></i> NVMe SSD 5 GB</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> โดเมน 1</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> บัญชีอีเมล 5</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> Free SSL</li>
+                                    <div class="price">฿290<span class="price-unit">/เดือน</span></div>
+                                    <ul class="feature-list text-start mt-3">
+                                        <li><i class="bi bi-check-circle-fill"></i> NVMe SSD Space: 30 GB</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> Domain Name: 10 Domain</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> Email Account: 100</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> MySQL Database: 15</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> SSL-Let's Encrypt: FREE</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> Control Panel: DirectAdmin</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> PHP: 5.6, 7.4, 8.3</li>
                                     </ul>
-                                    <div class="price">฿290<span class="price-unit">/ปี</span></div>
-                                    <a href="https://client.bizbox.in.th/?cmd=cart&action=add&id=128" class="btn btn-primary-custom w-100 mt-3" target="_blank">สมัครเลย</a>
+                                    <a href="https://client.bizbox.in.th/?cmd=cart&action=add&id=128" class="btn btn-primary-custom w-100 mt-3" target="_blank">สมัครแพ็คเกจนี้</a>
                                 </div>
                             </div>
                         </div>
@@ -699,16 +790,18 @@
                                     <div class="service-icon">
                                         <i class="bi bi-envelope"></i>
                                     </div>
-                                    <h5 class="card-title">EMAIL - Standard</h5>
-                                    <p class="card-text">เหมาะสำหรับธุรกิจขนาดเล็ก</p>
-                                    <ul class="feature-list text-start">
-                                        <li><i class="bi bi-check-circle-fill"></i> NVMe SSD 10 GB</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> โดเมน 2</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> บัญชีอีเมล 15</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> Free SSL</li>
+                                    <h5 class="card-title">EMAIL-Standard</h5>
+                                    <div class="price">฿450<span class="price-unit">/เดือน</span></div>
+                                    <ul class="feature-list text-start mt-3">
+                                        <li><i class="bi bi-check-circle-fill"></i> NVMe SSD Space: 20 GB</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> Domain Name: 20 Domain</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> Email Account: 100</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> MySQL Database: 20</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> SSL-Let's Encrypt: FREE</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> Control Panel: DirectAdmin</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> PHP: 5.6, 7.4, 8.3</li>
                                     </ul>
-                                    <div class="price">฿450<span class="price-unit">/ปี</span></div>
-                                    <a href="https://client.bizbox.in.th/?cmd=cart&action=add&id=129" class="btn btn-primary-custom w-100 mt-3" target="_blank">สมัครเลย</a>
+                                    <a href="https://client.bizbox.in.th/?cmd=cart&action=add&id=129" class="btn btn-primary-custom w-100 mt-3" target="_blank">สมัครแพ็คเกจนี้</a>
                                 </div>
                             </div>
                         </div>
@@ -719,15 +812,17 @@
                                         <i class="bi bi-envelope"></i>
                                     </div>
                                     <h5 class="card-title">Email Pro</h5>
-                                    <p class="card-text">เหมาะสำหรับธุรกิจขนาดกลาง</p>
-                                    <ul class="feature-list text-start">
-                                        <li><i class="bi bi-check-circle-fill"></i> NVMe SSD 25 GB</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> โดเมน 5</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> บัญชีอีเมล 30</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> Free SSL</li>
+                                    <div class="price">฿850<span class="price-unit">/เดือน</span></div>
+                                    <ul class="feature-list text-start mt-3">
+                                        <li><i class="bi bi-check-circle-fill"></i> NVMe SSD Space: 25 GB</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> Domain Name: 50 Domain</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> Email Account: 125</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> MySQL Database: 25</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> SSL-Let's Encrypt: FREE</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> Control Panel: DirectAdmin</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> PHP: 5.6, 7.4, 8.3</li>
                                     </ul>
-                                    <div class="price">฿850<span class="price-unit">/ปี</span></div>
-                                    <a href="https://client.bizbox.in.th/?cmd=cart&action=add&id=130" class="btn btn-primary-custom w-100 mt-3" target="_blank">สมัครเลย</a>
+                                    <a href="https://client.bizbox.in.th/?cmd=cart&action=add&id=130" class="btn btn-primary-custom w-100 mt-3" target="_blank">สมัครแพ็คเกจนี้</a>
                                 </div>
                             </div>
                         </div>
@@ -738,21 +833,24 @@
                                         <i class="bi bi-envelope"></i>
                                     </div>
                                     <h5 class="card-title">Email Corp</h5>
-                                    <p class="card-text">โซลูชั่นสำหรับองค์กร</p>
-                                    <ul class="feature-list text-start">
-                                        <li><i class="bi bi-check-circle-fill"></i> NVMe SSD 50 GB</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> โดเมน 10</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> บัญชีอีเมล 100</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> Free SSL</li>
+                                    <div class="price">฿1,650<span class="price-unit">/เดือน</span></div>
+                                    <ul class="feature-list text-start mt-3">
+                                        <li><i class="bi bi-check-circle-fill"></i> NVMe SSD Space: 30 GB</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> Domain Name: 100 Domain</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> Email Account: 150</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> MySQL Database: 30</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> SSL-Let's Encrypt: FREE</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> Control Panel: DirectAdmin</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> PHP: 5.6, 7.4, 8.3</li>
                                     </ul>
-                                    <div class="price">฿1,650<span class="price-unit">/ปี</span></div>
-                                    <a href="https://client.bizbox.in.th/?cmd=cart&action=add&id=131" class="btn btn-primary-custom w-100 mt-3" target="_blank">สมัครเลย</a>
+                                    <a href="https://client.bizbox.in.th/?cmd=cart&action=add&id=131" class="btn btn-primary-custom w-100 mt-3" target="_blank">สมัครแพ็คเกจนี้</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 
+                <!-- VPS Windows Tab -->
                 <div class="tab-pane fade" id="vpswin" role="tabpanel">
                     <div class="row g-4">
                         <div class="col-md-6 col-lg-3">
@@ -761,16 +859,17 @@
                                     <div class="service-icon">
                                         <i class="bi bi-windows"></i>
                                     </div>
-                                    <h5 class="card-title">VPS - WinStart</h5>
-                                    <p class="card-text">เหมาะสำหรับแอปพลิเคชัน Windows</p>
-                                    <ul class="feature-list text-start">
-                                        <li><i class="bi bi-check-circle-fill"></i> CPU 1 vCore</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> RAM 1 GB</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> NVMe SSD 40 GB</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> แบนด์วิดท์ ไม่จำกัด</li>
-                                    </ul>
+                                    <h5 class="card-title">VPS-WinStart</h5>
                                     <div class="price">฿290<span class="price-unit">/เดือน</span></div>
-                                    <a href="https://client.bizbox.in.th/?cmd=cart&action=add&id=123" class="btn btn-primary-custom w-100 mt-3" target="_blank">ออกจำหน่าย</a>
+                                    <ul class="feature-list text-start mt-3">
+                                        <li><i class="bi bi-check-circle-fill"></i> 1 vCore Processor</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> 2 GB Memory</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> 20 GB NVMe SSD</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> 1 GB Share Bandwidth</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> Unlimited Data Transfer</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> 1 Public IP</li>
+                                    </ul>
+                                    <a href="https://client.bizbox.in.th/?cmd=cart&action=add&id=123" class="btn btn-primary-custom w-100 mt-3" target="_blank">สมัครแพ็คเกจนี้</a>
                                 </div>
                             </div>
                         </div>
@@ -780,16 +879,17 @@
                                     <div class="service-icon">
                                         <i class="bi bi-windows"></i>
                                     </div>
-                                    <h5 class="card-title">VPS - WinOffice</h5>
-                                    <p class="card-text">เหมาะสำหรับฐานข้อมูลขนาดเล็ก</p>
-                                    <ul class="feature-list text-start">
-                                        <li><i class="bi bi-check-circle-fill"></i> CPU 2 vCores</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> RAM 2 GB</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> NVMe SSD 80 GB</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> แบนด์วิดท์ ไม่จำกัด</li>
-                                    </ul>
+                                    <h5 class="card-title">VPS-WinOffice</h5>
                                     <div class="price">฿590<span class="price-unit">/เดือน</span></div>
-                                    <a href="https://client.bizbox.in.th/?cmd=cart&action=add&id=132" class="btn btn-primary-custom w-100 mt-3" target="_blank">ออกจำหน่าย</a>
+                                    <ul class="feature-list text-start mt-3">
+                                        <li><i class="bi bi-check-circle-fill"></i> 2 vCore Processor</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> 4 GB Memory</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> 40 GB NVMe SSD</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> 1 GB Share Bandwidth</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> Unlimited Data Transfer</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> 1 Public IP</li>
+                                    </ul>
+                                    <a href="https://client.bizbox.in.th/?cmd=cart&action=add&id=132" class="btn btn-primary-custom w-100 mt-3" target="_blank">สมัครแพ็คเกจนี้</a>
                                 </div>
                             </div>
                         </div>
@@ -799,16 +899,17 @@
                                     <div class="service-icon">
                                         <i class="bi bi-windows"></i>
                                     </div>
-                                    <h5 class="card-title">VPS - WinPower</h5>
-                                    <p class="card-text">เหมาะสำหรับแอปพลิเคชันขนาดใหญ่</p>
-                                    <ul class="feature-list text-start">
-                                        <li><i class="bi bi-check-circle-fill"></i> CPU 3 vCores</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> RAM 4 GB</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> NVMe SSD 120 GB</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> แบนด์วิดท์ ไม่จำกัด</li>
-                                    </ul>
+                                    <h5 class="card-title">VPS-WinPower</h5>
                                     <div class="price">฿1,190<span class="price-unit">/เดือน</span></div>
-                                    <a href="https://client.bizbox.in.th/?cmd=cart&action=add&id=133" class="btn btn-primary-custom w-100 mt-3" target="_blank">ออกจำหน่าย</a>
+                                    <ul class="feature-list text-start mt-3">
+                                        <li><i class="bi bi-check-circle-fill"></i> 4 vCore Processor</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> 8 GB Memory</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> 80 GB NVMe SSD</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> 1 GB Share Bandwidth</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> Unlimited Data Transfer</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> 1 Public IP</li>
+                                    </ul>
+                                    <a href="https://client.bizbox.in.th/?cmd=cart&action=add&id=133" class="btn btn-primary-custom w-100 mt-3" target="_blank">สมัครแพ็คเกจนี้</a>
                                 </div>
                             </div>
                         </div>
@@ -818,16 +919,17 @@
                                     <div class="service-icon">
                                         <i class="bi bi-windows"></i>
                                     </div>
-                                    <h5 class="card-title">VPS - WinUltimate</h5>
-                                    <p class="card-text">โซลูชั่นสำหรับองค์กร</p>
-                                    <ul class="feature-list text-start">
-                                        <li><i class="bi bi-check-circle-fill"></i> CPU 4 vCores</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> RAM 8 GB</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> NVMe SSD 200 GB</li>
-                                        <li><i class="bi bi-check-circle-fill"></i> แบนด์วิดท์ ไม่จำกัด</li>
-                                    </ul>
+                                    <h5 class="card-title">VPS-WinUltimate</h5>
                                     <div class="price">฿2,390<span class="price-unit">/เดือน</span></div>
-                                    <a href="https://client.bizbox.in.th/?cmd=cart&action=add&id=134" class="btn btn-primary-custom w-100 mt-3" target="_blank">ออกจำหน่าย</a>
+                                    <ul class="feature-list text-start mt-3">
+                                        <li><i class="bi bi-check-circle-fill"></i> 8 vCore Processor</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> 16 GB Memory</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> 160 GB NVMe SSD</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> 1 GB Share Bandwidth</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> Unlimited Data Transfer</li>
+                                        <li><i class="bi bi-check-circle-fill"></i> 1 Public IP</li>
+                                    </ul>
+                                    <a href="https://client.bizbox.in.th/?cmd=cart&action=add&id=134" class="btn btn-primary-custom w-100 mt-3" target="_blank">สมัครแพ็คเกจนี้</a>
                                 </div>
                             </div>
                         </div>
@@ -837,158 +939,7 @@
         </div>
     </section>
 
-    <!-- 价格方案 -->
-    <section id="pricing" class="py-5 bg-light">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="section-title">แพ็คเกจราคาพิเศษ</h2>
-                <p class="lead">เลือกแพ็คเกจที่เหมาะกับความต้องการของคุณ</p>
-            </div>
-            
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-3">
-                    <div class="pricing-card card h-100">
-                        <div class="card-body text-center p-4">
-                            <h4 class="card-title">Starter</h4>
-                            <div class="price">฿99<span class="price-unit">/เดือน</span></div>
-                            <p class="card-text mt-3">เหมาะสำหรับเว็บไซต์ส่วนตัวหรือธุรกิจเล็ก</p>
-                            <ul class="feature-list text-start">
-                                <li><i class="bi bi-check-circle-fill"></i> พื้นที่ 5 GB</li>
-                                <li><i class="bi bi-check-circle-fill"></i> แบนด์วิดท์ 100 GB/เดือน</li>
-                                <li><i class="bi bi-check-circle-fill"></i> ฐานข้อมูล 1</li>
-                                <li><i class="bi bi-check-circle-fill"></i> บัญชีอีเมล 5</li>
-                                <li><i class="bi bi-check-circle-fill"></i> SSL ฟรี</li>
-                            </ul>
-                            <a href="#" class="btn btn-outline-primary w-100 mt-3">เลือกแพ็คเกจ</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="pricing-card card h-100">
-                        <div class="card-body text-center p-4">
-                            <h4 class="card-title">Business</h4>
-                            <div class="price">฿299<span class="price-unit">/เดือน</span></div>
-                            <p class="card-text mt-3">เหมาะสำหรับธุรกิจขนาดกลาง</p>
-                            <ul class="feature-list text-start">
-                                <li><i class="bi bi-check-circle-fill"></i> พื้นที่ 15 GB</li>
-                                <li><i class="bi bi-check-circle-fill"></i> แบนด์วิดท์ 300 GB/เดือน</li>
-                                <li><i class="bi bi-check-circle-fill"></i> ฐานข้อมูล 5</li>
-                                <li><i class="bi bi-check-circle-fill"></i> บัญชีอีเมล 20</li>
-                                <li><i class="bi bi-check-circle-fill"></i> SSL ฟรี</li>
-                            </ul>
-                            <a href="#" class="btn btn-outline-primary w-100 mt-3">เลือกแพ็คเกจ</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="pricing-card card h-100 featured">
-                        <div class="card-body text-center p-4">
-                            <h4 class="card-title">Professional</h4>
-                            <div class="price">฿599<span class="price-unit">/เดือน</span></div>
-                            <p class="card-text mt-3">เหมาะสำหรับเว็บไซต์ที่มีผู้เข้าชมสูง</p>
-                            <ul class="feature-list text-start">
-                                <li><i class="bi bi-check-circle-fill"></i> พื้นที่ 30 GB</li>
-                                <li><i class="bi bi-check-circle-fill"></i> แบนด์วิดท์ ไม่จำกัด</li>
-                                <li><i class="bi bi-check-circle-fill"></i> ฐานข้อมูล 10</li>
-                                <li><i class="bi bi-check-circle-fill"></i> บัญชีอีเมล 50</li>
-                                <li><i class="bi bi-check-circle-fill"></i> SSL ฟรี + สำรองข้อมูลรายวัน</li>
-                            </ul>
-                            <a href="#" class="btn btn-primary-custom w-100 mt-3">เลือกแพ็คเกจ</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="pricing-card card h-100">
-                        <div class="card-body text-center p-4">
-                            <h4 class="card-title">Enterprise</h4>
-                            <div class="price">฿1,299<span class="price-unit">/เดือน</span></div>
-                            <p class="card-text mt-3">โซลูชั่นสำหรับองค์กรขนาดใหญ่</p>
-                            <ul class="feature-list text-start">
-                                <li><i class="bi bi-check-circle-fill"></i> พื้นที่ 100 GB</li>
-                                <li><i class="bi bi-check-circle-fill"></i> แบนด์วิดท์ ไม่จำกัด</li>
-                                <li><i class="bi bi-check-circle-fill"></i> ฐานข้อมูล ไม่จำกัด</li>
-                                <li><i class="bi bi-check-circle-fill"></i> บัญชีอีเมล ไม่จำกัด</li>
-                                <li><i class="bi bi-check-circle-fill"></i> SSL ฟรี + สำรองข้อมูลรายวัน + CDN</li>
-                            </ul>
-                            <a href="#" class="btn btn-outline-primary w-100 mt-3">เลือกแพ็คเกจ</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 客户评价 -->
-    <section class="py-5">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="section-title">ลูกค้าของเราพูดอะไร</h2>
-                <p class="lead">ความคิดเห็นจากลูกค้าที่ใช้บริการของเรา</p>
-            </div>
-            
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="testimonial-card">
-                        <div class="stars">
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                        </div>
-                        <p>"บริการดีเยี่ยม ระบบเสถียร ทีมงานตอบปัญหาได้รวดเร็ว แนะนำเลยครับ"</p>
-                        <div class="d-flex align-items-center">
-                            <img src="https://picsum.photos/seed/person1/80/80.jpg" alt="ลูกค้า">
-                            <div class="ms-3">
-                                <h6 class="mb-0">สมชาย ใจดี</h6>
-                                <small>เจ้าของธุรกิจออนไลน์</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="testimonial-card">
-                        <div class="stars">
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                        </div>
-                        <p>"ใช้บริการ VPS Forex มา 1 ปีแล้ว ความเร็วสูง ไม่มีสะดุด ทำให้การเทรดลื่นไหล"</p>
-                        <div class="d-flex align-items-center">
-                            <img src="https://picsum.photos/seed/person2/80/80.jpg" alt="ลูกค้า">
-                            <div class="ms-3">
-                                <h6 class="mb-0">วิชัย รุ่งเรือง</h6>
-                                <small>เทรดเดอร์มืออาชีพ</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="testimonial-card">
-                        <div class="stars">
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                            <i class="bi bi-star-fill"></i>
-                        </div>
-                        <p>"ราคาถูก คุณภาพดี บริการหลังการขายดีเยี่ยม จะใช้บริการต่อไปแน่นอน"</p>
-                        <div class="d-flex align-items-center">
-                            <img src="https://picsum.photos/seed/person3/80/80.jpg" alt="ลูกค้า">
-                            <div class="ms-3">
-                                <h6 class="mb-0">มานี แก้วใส</h6>
-                                <small>นักพัฒนาเว็บไซต์</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 联系我们 -->
+    <!-- Contact Section -->
     <section id="contact" class="py-5 bg-light">
         <div class="container">
             <div class="text-center mb-5">
@@ -998,84 +949,87 @@
             
             <div class="row">
                 <div class="col-md-4 mb-4">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body text-center p-4">
+                    <div class="contact-card h-100">
+                        <div class="text-center">
                             <div class="service-icon">
                                 <i class="bi bi-geo-alt-fill"></i>
                             </div>
                             <h5 class="card-title mt-3">ที่อยู่</h5>
-                            <p class="card-text">บริษัท ดิจิเทค อินโนเวชั่น จำกัด<br>
-                            13 ซอยโกสุมรวมใจ 12<br>
-                            แขวงดอนเมือง เขตดอนเมือง<br>
-                            กรุงเทพมหานคร 10210</p>
+                            <p class="card-text">
+                                บริษัท ดิจิเทค อินโนเวชั่น จำกัด<br>
+                                13 ซอยโกสุมรวมใจ 12<br>
+                                แขวงดอนเมือง เขตดอนเมือง<br>
+                                กรุงเทพมหานคร 10210
+                            </p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body text-center p-4">
+                    <div class="contact-card h-100">
+                        <div class="text-center">
                             <div class="service-icon">
                                 <i class="bi bi-telephone-fill"></i>
                             </div>
                             <h5 class="card-title mt-3">ติดต่อฉับพลัน</h5>
-                            <p class="card-text">โทร: 081-088-8269<br>
-                            อีเมล: info@bizbox.in.th<br>
-                            แอดไลน์: <a href="https://lin.ee/8GzYFMo" target="_blank">@bizbox</a></p>
+                            <p class="card-text">
+                                โทร: 081-088-8269<br>
+                                แอดไลน์: <a href="https://lin.ee/8GzYFMo" target="_blank">@bizbox</a><br>
+                                เฟสบุ๊ค: <a href="https://m.me/557079864149621" target="_blank">Message</a>
+                            </p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body text-center p-4">
+                    <div class="contact-card h-100">
+                        <div class="text-center">
                             <div class="service-icon">
-                                <i class="bi bi-clock-fill"></i>
+                                <i class="bi bi-bank"></i>
                             </div>
-                            <h5 class="card-title mt-3">เวลาทำการ</h5>
-                            <p class="card-text">จันทร์ - ศุกร์: 9:00 - 18:00 น.<br>
-                            เสาร์: 9:00 - 15:00 น.<br>
-                            อาทิตย์: หยุดทำการ<br>
-                            สำหรับลูกค้าใหม่: 24/7</p>
+                            <h5 class="card-title mt-3">บัญชีธนาคาร</h5>
+                            <p class="card-text">
+                                <strong>ธนาคารไทยพาณิชย์ (SCB)</strong><br>
+                                เลขที่บัญชี: 202-276-513-3<br>
+                                ชื่อบัญชี: บริษัท ดิจิเทค อินโนเวชั่น จำกัด
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <div class="row mt-5">
+            <div class="row mt-4">
                 <div class="col-md-8 mx-auto">
-                    <div class="card border-0 shadow-sm">
-                        <div class="card-body p-5">
-                            <h4 class="card-title text-center mb-4">ส่งข้อความถึงเรา</h4>
-                            <form>
-                                <div class="row">
-                                    <div class="col-md-6 mb-3">
-                                        <label for="name" class="form-label">ชื่อ-นามสกุล</label>
-                                        <input type="text" class="form-control" id="name" required>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label for="email" class="form-label">อีเมล</label>
-                                        <input type="email" class="form-control" id="email" required>
-                                    </div>
+                    <div class="contact-card">
+                        <h4 class="card-title text-center mb-4">ส่งข้อความถึงเรา</h4>
+                        <form id="contactForm">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="name" class="form-label">ชื่อ-นามสกุล</label>
+                                    <input type="text" class="form-control" id="name" required>
                                 </div>
-                                <div class="mb-3">
-                                    <label for="subject" class="form-label">เรื่อง</label>
-                                    <input type="text" class="form-control" id="subject" required>
+                                <div class="col-md-6 mb-3">
+                                    <label for="email" class="form-label">อีเมล</label>
+                                    <input type="email" class="form-control" id="email" required>
                                 </div>
-                                <div class="mb-3">
-                                    <label for="message" class="form-label">ข้อความ</label>
-                                    <textarea class="form-control" id="message" rows="5" required></textarea>
-                                </div>
-                                <div class="text-center">
-                                    <button type="submit" class="btn btn-primary-custom px-5">ส่งข้อความ</button>
-                                </div>
-                            </form>
-                        </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="subject" class="form-label">เรื่อง</label>
+                                <input type="text" class="form-control" id="subject" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">ข้อความ</label>
+                                <textarea class="form-control" id="message" rows="5" required></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary-custom px-5">ส่งข้อความ</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 页脚 -->
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="row">
@@ -1094,43 +1048,39 @@
                     <ul class="list-unstyled">
                         <li><a href="#home">หน้าแรก</a></li>
                         <li><a href="#services">บริการของเรา</a></li>
-                        <li><a href="#pricing">แพ็คเกจ</a></li>
                         <li><a href="#contact">ติดต่อเรา</a></li>
+                        <li><a href="https://client.bizbox.in.th/index.php?/clientarea/" target="_blank">เข้าสู่ระบบ</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3 mb-4">
-                    <h5>บริการของเรา</h5>
+                    <h5>ชุมชน</h5>
                     <ul class="list-unstyled">
-                        <li><a href="#">Web Hosting</a></li>
-                        <li><a href="#">VPS Forex</a></li>
-                        <li><a href="#">VPS Linux</a></li>
-                        <li><a href="#">Email Lite</a></li>
-                        <li><a href="#">VPS-WinStart</a></li>
+                        <li><a href="https://www.facebook.com/bizboxth/" target="_blank">Facebook</a></li>
+                        <li><a href="https://www.facebook.com/share/g/1886bRCi34/" target="_blank">ชุมชนคนขี้เกียจ</a></li>
+                        <li><a href="https://line.me/ti/g2/o-CbqUE0712Tw6AyuFaAGNvglBHUfb2UefuG-A?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank">กลุ่มไลน์</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3 mb-4">
-                    <h5>ข้อมูลบัญชีธนาคาร</h5>
-                    <p>บริษัท ดิจิเทค อินโนเวชั่น จำกัด</p>
-                    <p><strong>ธนาคารไทยพาณิชย์ (SCB)</strong><br>
-                    เลขที่บัญชี: 202-276-513-3</p>
-                    // <p><strong>พร้อมเพย์</strong><br>
-                    // 081-088-8269</p>
+                    <h5>นโยบาย</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="https://tuikub.github.io/vps/bizbox/privacy-policy.html" target="_blank">นโยบายความเป็นส่วนตัว</a></li>
+                        <li><a href="https://tuikub.github.io/vps/bizbox/terms-of-service.html" target="_blank">เงื่อนไขการให้บริการ</a></li>
+                    </ul>
                 </div>
             </div>
             <hr class="my-4 bg-white">
             <div class="row align-items-center">
                 <div class="col-md-6">
-                    <p class="mb-0">&copy; 2023 BizBox. All rights reserved.</p>
+                    <p class="mb-0">&copy; 2024 BizBox. All rights reserved.</p>
                 </div>
                 <div class="col-md-6 text-md-end">
-                    <a href="https://tuikub.github.io/vps/bizbox/privacy-policy.html" target="_blank">นโยบายความเป็นส่วนตัว</a> | 
-                    <a href="https://tuikub.github.io/vps/bizbox/terms-of-service.html" target="_blank">เงื่อนไขการให้บริการ</a>
+                    <p class="mb-0">บริษัท ดิจิเทค อินโนเวชั่น จำกัด</p>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Cookie 同意横幅 -->
+    <!-- Cookie Banner -->
     <div class="cookie-banner" id="cookieBanner">
         <div class="container">
             <div class="row align-items-center">
@@ -1144,59 +1094,126 @@
         </div>
     </div>
 
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Cookie 同意处理
+        // Page Loader
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                const loader = document.getElementById('page-loader');
+                loader.style.opacity = '0';
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                }, 500);
+            }, 300);
+        });
+
+        // Cookie Banner
         document.addEventListener('DOMContentLoaded', function() {
-            // 检查是否已经接受过 cookie
             if (!localStorage.getItem('cookieAccepted')) {
                 document.getElementById('cookieBanner').classList.add('show');
             }
             
-            // 接受 cookie 按钮
             document.getElementById('acceptCookies').addEventListener('click', function() {
                 localStorage.setItem('cookieAccepted', 'true');
                 document.getElementById('cookieBanner').classList.remove('show');
             });
         });
-        
-        // 平滑滚动
+
+        // Smooth Scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             });
         });
-        
-        // 表单提交处理
-        document.querySelectorAll('form').forEach(form => {
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // 创建成功提示
-                const alert = document.createElement('div');
-                alert.className = 'alert alert-success alert-dismissible fade show position-fixed top-0 start-50 translate-middle-x mt-3';
-                alert.style.zIndex = '9999';
-                alert.innerHTML = `
-                    <strong>สำเร็จ!</strong> ข้อมูลของคุณได้ถูกส่งเรียบร้อยแล้ว
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                `;
-                document.body.appendChild(alert);
-                
-                // 重置表单
+
+        // Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const subject = document.getElementById('subject').value.trim();
+            const message = document.getElementById('message').value.trim();
+            
+            // Validate form
+            let isValid = true;
+            let errorMessage = '';
+            
+            if (name.length < 2) {
+                isValid = false;
+                errorMessage = 'ชื่อต้องมีอย่างน้อย 2 ตัวอักษร';
+            } else if (!isValidEmail(email)) {
+                isValid = false;
+                errorMessage = 'กรุณากรอกอีเมลที่ถูกต้อง';
+            } else if (subject.length < 5) {
+                isValid = false;
+                errorMessage = 'เรื่องต้องมีอย่างน้อย 5 ตัวอักษร';
+            } else if (message.length < 10) {
+                isValid = false;
+                errorMessage = 'ข้อความต้องมีอย่างน้อย 10 ตัวอักษร';
+            }
+            
+            // Show result
+            if (isValid) {
+                showAlert('success', 'สำเร็จ!', 'ข้อมูลของคุณได้ถูกส่งเรียบร้อยแล้ว');
                 this.reset();
-                
-                // 3秒后自动移除提示
-                setTimeout(() => {
-                    alert.remove();
-                }, 3000);
-            });
+            } else {
+                showAlert('danger', 'ข้อผิดพลาด!', errorMessage);
+            }
         });
-        
-        // 添加滚动时的导航栏效果
+
+        // Email validation function
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        // Show alert function
+        function showAlert(type, title, message) {
+            const alert = document.createElement('div');
+            alert.className = `alert alert-${type} alert-dismissible fade show position-fixed top-0 start-50 translate-middle-x mt-3`;
+            alert.style.zIndex = '9999';
+            alert.innerHTML = `
+                <strong>${title}</strong> ${message}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            `;
+            document.body.appendChild(alert);
+            
+            setTimeout(() => {
+                alert.remove();
+            }, 5000);
+        }
+
+        // Scroll animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards
+        document.querySelectorAll('.service-card, .pricing-card, .contact-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Navbar scroll effect
         window.addEventListener('scroll', function() {
             const navbar = document.querySelector('.navbar');
             if (window.scrollY > 50) {
