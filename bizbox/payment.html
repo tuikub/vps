@@ -37,7 +37,21 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
         <div class="container">
-            <a class="navbar-brand fw-bold text-primary" href="index.html"><i class="bi bi-box-fill"></i> BizBox</a>
+            <!-- เปลี่ยนเป็นรูปโลโก้ และลิงก์กลับหน้าหลัก -->
+            <a class="navbar-brand" href="https://tuikub.github.io/vps/bizbox/">
+                <img src="https://tuikub.github.io/vps/bizbox/logi1.jpg" alt="BizBox Logo" height="40" style="object-fit: contain;">
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <!-- ลิงก์กลับหน้าหลัก -->
+                    <li class="nav-item"><a class="nav-link" href="https://tuikub.github.io/vps/bizbox/">หน้าแรก</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://tuikub.github.io/vps/bizbox/#contact">ติดต่อเรา</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
 
@@ -69,18 +83,13 @@
                 </div>
             </div>
 
-            <!-- 
-                ================================================================
-                FORM START: ส่งข้อมูลไปที่ info@bizbox.in.th ผ่าน FormSubmit
-                ================================================================
-            -->
-            <form action="https://formsubmit.co/info@bizbox.in.th" method="POST" enctype="multipart/form-data" id="paymentForm">
+            <!-- Form -->
+            <form id="paymentForm" enctype="multipart/form-data">
                 
-                <!-- ตั้งค่า FormSubmit -->
-                <input type="hidden" name="_subject" value="แจ้งชำระเงินใหม่ (BizBox)"> <!-- หัวข้ออีเมล -->
-                <input type="hidden" name="_captcha" value="false"> <!-- ปิด Captcha -->
-                <input type="hidden" name="_next" value="https://tuikub.github.io/vps/bizbox/"> <!-- ส่งเสร็จแล้วกลับไปหน้าเว็บ (เปลี่ยนลิงก์ได้) -->
-                <input type="hidden" name="_template" value="table"> <!-- รูปแบบอีเมลสวยๆ -->
+                <!-- Hidden Config for FormSubmit -->
+                <input type="hidden" name="_subject" value="แจ้งชำระเงินใหม่ (BizBox)">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
 
                 <!-- ข้อมูลผู้ชำระเงิน -->
                 <div class="mb-4">
@@ -174,6 +183,63 @@
                 preview.innerHTML = '<i class="bi bi-check-circle-fill"></i> ไฟล์พร้อมส่ง: ' + input.files[0].name;
             }
         }
+
+        // --- ส่วนที่เพิ่มใหม่: จัดการการส่งฟอร์มแบบ AJAX และแสดง Popup ---
+        document.getElementById('paymentForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // ป้องกันการรีเฟรชหน้าเว็บ
+
+            // 1. แสดง Loading Popup
+            Swal.fire({
+                title: 'กำลังส่งข้อมูล...',
+                text: 'กรุณารอสักครู่ ห้ามปิดหน้าต่างนี้',
+                allowOutsideClick: false,
+                didOpen: () => {
+                    Swal.showLoading();
+                }
+            });
+
+            // เตรียมข้อมูลสำหรับส่ง
+            const formData = new FormData(this);
+
+            // 2. ส่งข้อมูลไปที่ FormSubmit แบบ AJAX
+            fetch("https://formsubmit.co/ajax/info@bizbox.in.th", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if(data.success === "true" || data.success === true) {
+                    // 3. กรณีสำเร็จ: แสดง Popup เครื่องหมายถูก
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'แจ้งชำระเงินสำเร็จ!',
+                        text: 'ทางเราได้รับข้อมูลเรียบร้อยแล้ว จะรีบดำเนินการตรวจสอบให้ครับ',
+                        confirmButtonColor: '#0066cc',
+                        confirmButtonText: 'ตกลง'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                             // รีเซ็ตฟอร์ม หรือกลับไปหน้าแรก
+                             document.getElementById('paymentForm').reset();
+                             document.getElementById('filePreview').innerHTML = '';
+                             window.location.href = "https://tuikub.github.io/vps/bizbox/"; // กลับไปหน้าหลักหลังกดตกลง
+                        }
+                    });
+                } else {
+                    throw new Error('Form submit returned false');
+                }
+            })
+            .catch(error => {
+                // 4. กรณีมีข้อผิดพลาด: แสดง Popup กากบาท
+                console.error('Error:', error);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'เกิดข้อผิดพลาด!',
+                    text: 'ไม่สามารถส่งข้อมูลได้ กรุณาลองใหม่อีกครั้ง หรือติดต่อเราผ่าน Line',
+                    confirmButtonColor: '#d33',
+                    confirmButtonText: 'ปิด'
+                });
+            });
+        });
     </script>
 </body>
 </html>
